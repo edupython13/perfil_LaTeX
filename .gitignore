@@ -1,0 +1,30 @@
+# Archivos temporales de LaTeX
+*.aux
+*.log
+*.out
+*.toc
+*.lof
+*.lot
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+
+# Archivos de bibliografía
+*.bbl
+*.blg
+
+# Archivos de respaldo
+*~
+*.backup
+*.bak
+
+# Archivos PDF generados (opcional - si no quieres subir el PDF)
+# *.pdf
+
+# Archivos específicos del sistema
+.DS_Store
+Thumbs.db
+
+# Directorios de output
+build/
+_output/
