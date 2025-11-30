@@ -1,0 +1,65 @@
+\begin{landscape}
+
+\subsection*{Cuadro Nº 10: Imagenología y otros servicios}
+\vspace{0.3cm}
+
+\fontsize{10pt}{15pt}\selectfont
+\setlength{\extrarowheight}{2pt}
+\setlength{\tabcolsep}{3pt}
+
+\begin{longtable}{
+    |>{\centering\arraybackslash}m{0.10\linewidth}
+    |>{\centering\arraybackslash}m{0.07\linewidth}
+    |>{\raggedright\arraybackslash}m{0.40\linewidth}
+    |>{\raggedright\arraybackslash}m{0.41\linewidth}|
+}
+
+% ================================
+% CABECERA DE LA TABLA
+% ================================
+\hline
+\rowcolor{blue!10}
+    \textbf{ESPECIE}
+    & \textbf{Nº DE CASOS}
+    & \textbf{CASO/ACTIVIDAD}
+    & \textbf{OBSERVACIONES} \\
+\hline
+\endhead
+
+% -----------------------------------------------------------------------------
+% CAPTION Y LABEL
+% -----------------------------------------------------------------------------
+\caption[]{Imagenología y otros servicios}
+\label{tab:servicios}
+\endlastfoot
+
+% ================================
+% DATOS - CANINO (filas fusionadas)
+% ================================
+\multirow{3}{*}{\centering\arraybackslash Canino} 
+    & 26 
+    & Rayos X
+    & \\
+\cline{2-4}
+    
+    & 7
+    & Ecografía
+    & \\
+\cline{2-4}
+    
+    & 1 
+    & Internación
+    & \\
+\hline
+
+% ================================
+% DATOS - FELINO
+% ================================
+\centering Felino 
+    & 3
+    & Internación
+    & \\
+\hline
+
+\end{longtable}
+\end{landscape}

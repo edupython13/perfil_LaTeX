@@ -1,0 +1,23 @@
+% plain:        plainnat,ieeetr,abbrvnat
+% Vancouver:	unsrtnat
+% Harvard:		agsm,dcu,jmr,jphysicsB,kluwer,nederlands
+% APA:          apalike
+
+\phantomsection
+% \renewcommand{\bibname}{BIBLIOGRAFÍA}
+% Para article: \renewcommand{\refname}{<nuevo título>}
+% Para book o report: \renewcommand{\bibname}{<nuevo título>}
+\renewcommand{\refname}{\normalsize{BIBLIOGRAFÍA CONSULTADA}}
+%\setlength{\parindent}{10ex}
+
+\bibliographystyle{dcu}%agsm,dcu
+%\renewcommand{\bibnumfmt}[1]{ #1. }
+\renewcommand\bibnumfmt[1]{#1.\!}
+%\setcitestyle{authoryear,open={((},close={))}} %Citation-related commands
+
+%\nocite{*}
+\bibliography{references/authors}% *.bib
+% \addcontentsline{toc}{section}{BIBLIOGRAFÍA}
+% \addcontentsline{toc}{section}{\bibname}
+
+\clearpage

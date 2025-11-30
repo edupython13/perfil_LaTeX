@@ -1,0 +1,223 @@
+% ===================================================================
+% 1. PDF/A-1b: CONFIGURACIÓN INICIAL
+% ===================================================================
+\pdfminorversion=7
+\pdfcompresslevel=9
+\pdfobjcompresslevel=2
+\pdfinclusioncopyfonts=1
+
+% ===================================================================
+% 2. CODIFICACIÓN, IDIOMA Y FUENTES (Times New Roman 12pt)
+% ===================================================================
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish, es-noindentfirst, es-nodecimaldot]{babel}
+\usepackage{newtxtext, newtxmath}
+\usepackage{microtype}
+\DisableLigatures{encoding = *, family = *}
+\usepackage{textcase} % Requerido para \MakeUppercase en TOC
+
+% ===================================================================
+% 3. GEOMETRÍA DE PÁGINA (MÁRGENES ESTRICTOS)
+% ===================================================================
+\usepackage[
+  letterpaper,
+  left=3.5cm,
+  right=3.0cm,
+  top=3.0cm,
+  bottom=3.0cm,
+  noheadfoot,
+  headheight=0pt,
+  headsep=0pt,
+  heightrounded
+]{geometry}
+
+% Posiciona la numeración a 1.5 cm del borde inferior
+\setlength{\footskip}{1.5cm}
+
+% ===================================================================
+% 4. ESPACIADO Y PÁRRAFOS (Interlineado 1.5)
+% ===================================================================
+\usepackage{setspace}
+\onehalfspacing
+%\renewcommand{\arraystretch}{1.5}
+%\doublespacing
+\usepackage{parskip}
+\setlength{\parindent}{0pt}
+\pagestyle{plain}
+\raggedbottom
+\sloppy
+
+% ===================================================================
+% 5. PAQUETES DE TABLAS Y ESTRUCTURA
+% ===================================================================
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{enumitem}
+\usepackage{multirow}
+\usepackage{rotating}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{booktabs}
+\usepackage{pdflscape}
+\usepackage[table]{xcolor}
+\usepackage{caption}
+\captionsetup{
+  font=small,
+  labelfont=bf,
+  justification=centering,
+  labelsep=period,
+  skip=6pt
+}
+\usepackage{multicol}
+\usepackage{calc}
+\usepackage{ragged2e}
+\usepackage{ifthen} % Mantenido para funcionalidad de \pdft
+
+\newcolumntype{J}{>{\Justifying\arraybackslash}X}
+\newcolumntype{C}{>{\Centering\arraybackslash}X}
+
+% ===================================================================
+% 6. TÍTULOS, TOC Y BIBLIOGRAFÍA
+% ===================================================================
+\usepackage[compact]{titlesec}
+\usepackage[nottoc, numbib]{tocbibind}
+\usepackage[fixlanguage]{babelbib}
+\selectbiblanguage{spanish}
+\usepackage[numbers, sort&compress]{natbib}
+\usepackage{tocloft}
+
+% === ÍNDICE GENERAL (CORRECTO, CENTRADO, MAYÚSCULAS, ESTILO GLOBAL) ===
+\addto\captionsspanish{%
+  \renewcommand{\contentsname}{\centering\normalsize\bfseries ÍNDICE GENERAL}%
+}
+\renewcommand{\cfttoctitlefont}{\centering\normalsize\bfseries}
+%\renewcommand{\cftaftertoctitle}{\\[1.5\baselineskip]}% Respeta interlineado 1.5
+
+% Formato de títulos de sección normales
+\titleformat{\section}[hang]{\normalsize\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}{\normalsize\bfseries}{\thesubsection}{1em}{}
+\titleformat{\subsubsection}{\normalsize\bfseries}{\thesubsubsection}{1em}{}
+
+% Numeración con punto final
+\setcounter{secnumdepth}{6}
+\setcounter{tocdepth}{4}
+\renewcommand{\thesection}{\Roman{section}.}
+\renewcommand{\thesubsection}{\arabic{section}.\arabic{subsection}.}
+\renewcommand{\thesubsubsection}{\arabic{section}.\arabic{subsection}.\arabic{subsubsection}.}
+\renewcommand{\theparagraph}{\arabic{section}.\arabic{subsection}.\arabic{subsubsection}.\arabic{paragraph}}
+\renewcommand{\thesubparagraph}{\arabic{section}.\arabic{subsection}.\arabic{subsubsection}.\arabic{paragraph}.\arabic{subparagraph}}
+
+% Indentación del TOC
+\cftsetindents{section}{0em}{2.3em}
+\cftsetindents{subsection}{2.3em}{2.3em}
+\cftsetindents{subsubsection}{4.6em}{3.3em}
+\cftsetindents{paragraph}{7.9em}{4.6em}
+\cftsetindents{subparagraph}{12.5em}{4.8em}
+
+% ===================================================================
+% 7. COMANDOS PERSONALIZADOS (Optimizados)
+% ===================================================================
+\newcommand{\pdf}[3]{%
+  \begin{center}%
+    \includegraphics[scale=#1, page=#2]{#3}%
+  \end{center}%
+}
+
+\newcommand{\pdft}[5]{%
+  \begin{center}%
+    \ifthenelse{\equal{#5}{true}}{%
+      \includegraphics[scale=#1, page=#2, trim=#4, clip]{#3}%
+    }{%
+      \includegraphics[scale=#1, page=#2]{#3}%
+    }%
+  \end{center}%
+}
+
+\newcommand{\xcite}[1]{(\citeauthor{#1}, \citeyear{#1})}
+
+\newcounter{tocleftparcounter}
+\makeatletter
+\newcommand{\tocleftparagraph}[1]{%
+  \stepcounter{tocleftparcounter}%
+  \edef\tocleftparlabel{tocleftpar.\thetocleftparcounter}%
+  \hypertarget{\tocleftparlabel}{}%
+  
+  \addtocontents{toc}{%
+    \protect\normalsize\protect\l@section{%
+      \protect\hyperlink{\tocleftparlabel}{%
+        \protect\RaggedRight\protect\textbf{#1}\protect\cftsecleader%
+      }%
+    }{%
+      \protect\hyperlink{\tocleftparlabel}{%
+        \protect\cftsecpagefont\protect\textbf{\thepage}%
+      }%
+    }%
+  }%
+}
+\makeatother
+
+\newcommand{\leftitemize}[1]{%
+  \begin{itemize}[leftmargin=*, labelsep=4pt, itemindent=10pt, topsep=0pt, partopsep=0pt, parsep=0pt]%
+    #1%
+  \end{itemize}%
+}
+
+\newcommand{\leftenumerate}[1]{%
+  \begin{enumerate}[leftmargin=*, labelsep=4pt, itemindent=12pt, topsep=0pt, partopsep=0pt, parsep=0pt, label=\arabic{enumi}.]%
+    #1%
+  \end{enumerate}%
+}
+
+\providecommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+% ===================================================================
+% 8. HYPERREF (SIEMPRE AL FINAL)
+% ===================================================================
+\usepackage{hyperref}
+\hypersetup{
+  pdftitle={Clínica de Animales Menores y Mayores},
+  pdfauthor={Luis Eduardo Miranda Barja},
+  pdfsubject={Medicina Veterinaria y Zootecnia},
+  pdfkeywords={Veterinaria, Zootecnia, Internado, Clínica},
+  pdfcreator={LaTeX con pdfTeX},
+  pdfproducer={TeX Live 2025},
+  hidelinks,
+  colorlinks=false,
+  linkcolor=black,
+  citecolor=black,
+  urlcolor=gray,
+  %bookmarks=true,
+  bookmarksopen=true,
+  bookmarksnumbered=true,
+  pdfpagemode=UseOutlines,
+  pdfstartview=FitH,
+  pdfborder={0 0 0}
+}
+
+% -------------------------------
+% 9. PDF/A-1b FINAL
+% -------------------------------
+\pdfinfo{
+  /Title (Clínica de Animales Menores y Mayores)
+  /Author (Luis Eduardo Miranda Barja)
+  /Subject (Medicina Veterinaria y Zootecnia)
+  /Keywords (Veterinaria, Zootecnia, Internado, Clínica)
+}
+
+% -------------------------------
+% 10. ROMANOS EN MINÚSCULAS (CORREGIDO SIN ERRORES)
+% -------------------------------
+\makeatletter
+% 1. Redefinición de la primitiva interna para asegurar minúsculas
+% La primitiva \romannumeral produce minúsculas.
+\def\@roman#1{\romannumeral #1}
+
+% 2. Opcional: Si usa hyperref (recomendado para PDFs), 
+% parchee la referencia para el TOC, asegurando minúsculas 
+% sin depender de \thepage que podría estar redefinida.
+% Nota: El paquete etoolbox debe cargarse primero si usa \patchcmd.
+\usepackage{etoolbox}
+\patchcmd{\Hy@writebookmark}{\thepage}{\roman{page}}{}{}
+\makeatother

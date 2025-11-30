@@ -1,0 +1,115 @@
+\begin{landscape}
+
+\subsection*{Cuadro Nº 6: Traumatismos}
+\vspace{0.3cm}
+
+% =============================================================================
+% CONFIGURACIÓN TIPOGRÁFICA (NO TOCAR – FUNCIONA PERFECTAMENTE)
+% =============================================================================
+\fontsize{10pt}{15pt}\selectfont
+\setlength{\extrarowheight}{2pt}
+\setlength{\tabcolsep}{3pt}
+
+% =============================================================================
+% TABLA
+% =============================================================================
+\begin{longtable}{
+  |>{\centering\arraybackslash}m{0.10\linewidth}
+  |>{\centering\arraybackslash}m{0.05\linewidth}
+  |>{\centering\arraybackslash}m{0.13\linewidth}
+  |>{\raggedright\arraybackslash}m{0.13\linewidth}
+  |>{\raggedright\arraybackslash}m{0.18\linewidth}
+  |>{\raggedright\arraybackslash}m{0.14\linewidth}
+  |>{\centering\arraybackslash}m{0.06\linewidth}
+  |>{\raggedright\arraybackslash}m{0.16\linewidth}|
+}
+
+% -----------------------------------------------------------------------------
+% ENCABEZADO (PRIMERA PÁGINA Y SIGUIENTES)
+% -----------------------------------------------------------------------------
+\hline
+\rowcolor{blue!10}
+\textbf{ESPECIE} &
+\textbf{Nº CASOS} &
+\textbf{ENFERMEDAD} &
+\textbf{FÁRMACO} &
+\textbf{PRINCIPIO ACTIVO} &
+\textbf{DOSIS/VÍA de ADMINISTRACIÓN} &
+\textbf{TIEMPO} &
+\textbf{OBSERVACIONES} \\
+\hline
+\endhead
+
+% -----------------------------------------------------------------------------
+% PIE DE CONTINUACIÓN
+% -----------------------------------------------------------------------------
+\hline
+\multicolumn{8}{r}{\footnotesize\textit{Continúa en la siguiente página}} \\
+\endfoot
+
+% -----------------------------------------------------------------------------
+% CAPTION Y LABEL
+% -----------------------------------------------------------------------------
+\caption[]{Tratamiento de traumatismos}
+\label{tab:traumatismos}
+\endlastfoot
+
+% =============================================================================
+% CANINO – TRAUMATISMO (FRACTURA)
+% =============================================================================
+\multirow{7}{*}{\textbf{Canino}} &
+\multirow{7}{*}{4} &
+\multirow{7}{*}{\parbox{\linewidth}{Traumatismo (fractura)}} &
+Xilacina & Xilacina & 1\,ml/20\,kg IV-IM &
+\multirow{7}{*}{\parbox{\linewidth}{3-4 semanas}} &
+\multirow{7}{*}{} \\
+\cline{4-6}
+& & & Lidocaína & Lidocaína & Según criterio médico & & \\
+\cline{4-6}
+& & & Oximed & Oxitetraciclina, bencidamina & 1\,ml/5\,kg IM-SC & & \\
+\cline{4-6}
+& & & Desalgina & Dipirona & 1\,ml/10\,kg IV-IM-SC & & \\
+\cline{4-6}
+& & & Agua oxigenada & Peróxido de hidrógeno & Tópico & & \\
+\cline{4-6}
+& & & Yodo podovidona & Complejo de yodo molecular con podovidona & Tópico & & \\
+\cline{4-6}
+& & & Galmetrim plus & Cipermetrina, imidacloprid, sulfadiazina de plata & Local externo & & \\
+\hline
+
+% =============================================================================
+% CANINO – POLITRAUMATISMO
+% =============================================================================
+\multirow{4}{*}{\textbf{Canino}} &
+\multirow{4}{*}{24} &
+\multirow{4}{*}{Politraumatismo} &
+Desalgina & Dipirona & 1\,ml/10\,kg IV-IM-SC &
+\multirow{4}{*}{3-5 días} &
+\multirow{4}{*}{Satisfactorio} \\
+\cline{4-6}
+& & & Oximed & Oxitetraciclina, bencidamina & 1\,ml/5\,kg IM-SC & & \\
+\cline{4-6}
+& & & Complejo B & Vitamina B1, Vitamina B2, Vitamina B6, Vitamina B12, Vitamina B15 & 1\,ml/20\,kg IM-SC & & \\
+\cline{4-6}
+& & & Diclofenaco & Diclofenaco & 1\,ml/20\,kg IV-IM & & \\
+\hline
+
+% =============================================================================
+% FELINO – CONTUSIÓN
+% =============================================================================
+\multirow{4}{*}{\textbf{Felino}} &
+\multirow{4}{*}{2} &
+\multirow{4}{*}{Contusión} &
+Ankofen & Ketoprofeno & 0,5\,ml/25\,kg IM &
+\multirow{4}{*}{3-5 días} &
+\multirow{4}{*}{Satisfactorio} \\
+\cline{4-6}
+& & & Agua oxigenada & Peróxido de hidrógeno & Tópico & & \\
+\cline{4-6}
+& & & Yodo podovidona & Complejo de yodo molecular con podovidona & Tópico & & \\
+\cline{4-6}
+& & & Emplasto cicatrizante & Ácido galotánico, podovidona, yodo metálico, yodo de potasio & Tópico & & \\
+\hline
+
+\end{longtable}
+\end{landscape}

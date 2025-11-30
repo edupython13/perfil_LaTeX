@@ -1,0 +1,107 @@
+\begin{landscape}
+
+\subsection*{Cuadro Nº 3: Enfermedades metabólicas}
+\vspace{0.3cm}
+
+% =============================================================================
+% CONFIGURACIÓN TIPOGRÁFICA (NO TOCAR – FUNCIONA PERFECTAMENTE)
+% =============================================================================
+\fontsize{10pt}{15pt}\selectfont
+\setlength{\extrarowheight}{2pt}
+\setlength{\tabcolsep}{3pt}
+
+% =============================================================================
+% TABLA
+% =============================================================================
+\begin{longtable}{
+  |>{\centering\arraybackslash}m{0.10\linewidth}
+  |>{\centering\arraybackslash}m{0.05\linewidth}
+  |>{\centering\arraybackslash}m{0.13\linewidth}
+  |>{\raggedright\arraybackslash}m{0.13\linewidth}
+  |>{\raggedright\arraybackslash}m{0.18\linewidth}
+  |>{\raggedright\arraybackslash}m{0.14\linewidth}
+  |>{\centering\arraybackslash}m{0.06\linewidth}
+  |>{\raggedright\arraybackslash}m{0.16\linewidth}|
+}
+
+% -----------------------------------------------------------------------------
+% ENCABEZADO (PRIMERA PÁGINA Y SIGUIENTES)
+% -----------------------------------------------------------------------------
+\hline
+\rowcolor{blue!10}
+\textbf{ESPECIE} &
+\textbf{Nº CASOS} &
+\textbf{ENFERMEDAD} &
+\textbf{FÁRMACO} &
+\textbf{PRINCIPIO ACTIVO} &
+\textbf{DOSIS/VÍA de ADMINISTRACIÓN} &
+\textbf{TIEMPO} &
+\textbf{OBSERVACIONES} \\
+\hline
+\endhead
+
+% -----------------------------------------------------------------------------
+% PIE DE CONTINUACIÓN
+% -----------------------------------------------------------------------------
+\hline
+\multicolumn{8}{r}{\footnotesize\textit{Continúa en la siguiente página}} \\
+\endfoot
+
+% -----------------------------------------------------------------------------
+% CAPTION Y LABEL
+% -----------------------------------------------------------------------------
+\caption[]{Tratamiento de enfermedades metabólicas}
+\label{tab:enfermedades_metabolicas}
+\endlastfoot
+
+% =============================================================================
+% CANINO – ASCITIS
+% =============================================================================
+\multirow{3}{*}{\textbf{Canino}} &
+\multirow{3}{*}{3} &
+\multirow{3}{*}{Ascitis} &
+Furozur & Furosemida, dexametasona, fosfato de sodio & 1\,ml/10\,kg IM &
+\multirow{3}{*}{3-5 días} &
+\multirow{3}{*}{Satisfactorio} \\
+\cline{4-6}
+& & & Cefotaxima & Cefotaxima sódica & 2,5\,ml/10\,kg IV-IM & & \\
+\cline{4-6}
+& & & AminoLab Forte & Aminoácidos, dextrosa, cloruro de potasio, cloruro de sodio, cloruro de calcio, acetato de sodio, vitamina B1 B2 B6 B12 & 1\,ml/1\,kg IV & & \\
+\hline
+
+% =============================================================================
+% CANINO – ANEMIA
+% =============================================================================
+\multirow{4}{*}{\textbf{Canino}} &
+\multirow{4}{*}{2} &
+\multirow{4}{*}{Anemia} &
+Ringer Lactato & Electrolitos & Según criterio médico IV &
+\multirow{4}{*}{3-5 días} &
+\multirow{4}{*}{Satisfactorio} \\
+\cline{4-6}
+& & & AminoLab Forte & Aminoácidos, dextrosa, cloruro de potasio, cloruro de sodio, cloruro de calcio, acetato de sodio, vitamina B1 B2 B6 B12 & 1\,ml/1\,kg IV & & \\
+\cline{4-6}
+& & & Complejo B & Vitamina B1, Vitamina B2, Vitamina B6, Vitamina B12, Vitamina B15 & 1\,ml/20\,kg IM-SC & & \\
+\cline{4-6}
+& & & Duplafer & Complejo hierro dextano, vitamina B12 & 1-3\,ml IM & & \\
+\hline
+
+% =============================================================================
+% FELINO – ANEMIA
+% =============================================================================
+\multirow{4}{*}{\textbf{Felino}} &
+\multirow{4}{*}{1} &
+\multirow{4}{*}{Anemia} &
+Ringer Lactato & Electrolitos & Según criterio médico IV &
+\multirow{4}{*}{3-5 días} &
+\multirow{4}{*}{Satisfactorio} \\
+\cline{4-6}
+& & & AminoLab Forte & Aminoácidos, dextrosa, cloruro de potasio, cloruro de sodio, cloruro de calcio, acetato de sodio, vitamina B1 B2 B6 B12 & 1\,ml/1\,kg IV & & \\
+\cline{4-6}
+& & & Complejo B & Vitamina B1, Vitamina B2, Vitamina B6, Vitamina B12, Vitamina B15 & 1\,ml/20\,kg IM-SC & & \\
+\cline{4-6}
+& & & Duplafer & Complejo hierro dextano, vitamina B12 & 1-3\,ml IM & & \\
+\hline
+
+\end{longtable}
+\end{landscape}

@@ -1,0 +1,77 @@
+\begin{landscape}
+
+\subsection*{Cuadro Nº 5: Intoxicaciones}
+\vspace{0.3cm}
+
+% =============================================================================
+% CONFIGURACIÓN TIPOGRÁFICA (NO TOCAR – FUNCIONA PERFECTAMENTE)
+% =============================================================================
+\fontsize{10pt}{15pt}\selectfont
+\setlength{\extrarowheight}{2pt}
+\setlength{\tabcolsep}{3pt}
+
+% =============================================================================
+% TABLA
+% =============================================================================
+\begin{longtable}{
+  |>{\centering\arraybackslash}m{0.10\linewidth}
+  |>{\centering\arraybackslash}m{0.05\linewidth}
+  |>{\centering\arraybackslash}m{0.13\linewidth}
+  |>{\raggedright\arraybackslash}m{0.13\linewidth}
+  |>{\raggedright\arraybackslash}m{0.18\linewidth}
+  |>{\raggedright\arraybackslash}m{0.14\linewidth}
+  |>{\centering\arraybackslash}m{0.06\linewidth}
+  |>{\raggedright\arraybackslash}m{0.16\linewidth}|
+}
+
+% -----------------------------------------------------------------------------
+% ENCABEZADO (PRIMERA PÁGINA Y SIGUIENTES)
+% -----------------------------------------------------------------------------
+\hline
+\rowcolor{blue!10}
+\textbf{ESPECIE} &
+\textbf{Nº CASOS} &
+\textbf{ENFERMEDAD} &
+\textbf{FÁRMACO} &
+\textbf{PRINCIPIO ACTIVO} &
+\textbf{DOSIS/VÍA de ADMINISTRACIÓN} &
+\textbf{TIEMPO} &
+\textbf{OBSERVACIONES} \\
+\hline
+\endhead
+
+% -----------------------------------------------------------------------------
+% PIE DE CONTINUACIÓN
+% -----------------------------------------------------------------------------
+\hline
+\multicolumn{8}{r}{\footnotesize\textit{Continúa en la siguiente página}} \\
+\endfoot
+
+% -----------------------------------------------------------------------------
+% CAPTION Y LABEL
+% -----------------------------------------------------------------------------
+\caption[]{Tratamiento de intoxicaciones}
+\label{tab:intoxicaciones}
+\endlastfoot
+
+% =============================================================================
+% CANINO – INTOXICACIÓN ALIMENTICIA
+% =============================================================================
+\multirow{5}{*}{\textbf{Canino}} &
+\multirow{5}{*}{13} &
+\multirow{5}{*}{\parbox{\linewidth}{Intoxicación alimenticia}} &
+Suero fisiológico & Cloruro de sodio & Según criterio médico IV &
+\multirow{5}{*}{3 días} &
+\multirow{5}{*}{Satisfactorio} \\
+\cline{4-6}
+& & & Mercepton & Acetil D-L-Metionina, cloruro de colina, Inositol, Vitamina B1 B2 B6 B12, nicotinamida, pantotenato de calcio & 1\,ml/10\,kg IV-IM-SC & & \\
+\cline{4-6}
+& & & Desalgina & Dipirona & 1\,ml/10\,kg IV-IM-SC & & \\
+\cline{4-6}
+& & & Hepato-Ject & Ácido tioctico, ácido orótico, DL-Metionina/N-Acetil-L-Metionina, D-pantenol, Piridoxina HCl, ácido fólico, cloruro de colina, inositol, betaina HCl & 1\,ml/20\,kg IV-IM & & \\
+\cline{4-6}
+& & & Atropina & Sulfato de atropina & 0,5\,ml/10\,kg IV-IM-SC & & \\
+\hline
+
+\end{longtable}
+\end{landscape}

@@ -1,0 +1,98 @@
+\begin{landscape}
+
+\subsection*{Cuadro Nº 4: Enfermedades parasitarias}
+\vspace{0.3cm}
+
+% =============================================================================
+% CONFIGURACIÓN TIPOGRÁFICA (NO TOCAR – FUNCIONA PERFECTAMENTE)
+% =============================================================================
+\fontsize{10pt}{15pt}\selectfont
+\setlength{\extrarowheight}{2pt}
+\setlength{\tabcolsep}{3pt}
+
+% =============================================================================
+% TABLA
+% =============================================================================
+\begin{longtable}{
+  |>{\centering\arraybackslash}m{0.10\linewidth}
+  |>{\centering\arraybackslash}m{0.05\linewidth}
+  |>{\centering\arraybackslash}m{0.13\linewidth}
+  |>{\raggedright\arraybackslash}m{0.13\linewidth}
+  |>{\raggedright\arraybackslash}m{0.18\linewidth}
+  |>{\raggedright\arraybackslash}m{0.14\linewidth}
+  |>{\centering\arraybackslash}m{0.06\linewidth}
+  |>{\raggedright\arraybackslash}m{0.16\linewidth}|
+}
+
+% -----------------------------------------------------------------------------
+% ENCABEZADO (PRIMERA PÁGINA Y SIGUIENTES)
+% -----------------------------------------------------------------------------
+\hline
+\rowcolor{blue!10}
+\textbf{ESPECIE} &
+\textbf{Nº CASOS} &
+\textbf{ENFERMEDAD} &
+\textbf{FÁRMACO} &
+\textbf{PRINCIPIO ACTIVO} &
+\textbf{DOSIS/VÍA de ADMINISTRACIÓN} &
+\textbf{TIEMPO} &
+\textbf{OBSERVACIONES} \\
+\hline
+\endhead
+
+% -----------------------------------------------------------------------------
+% PIE DE CONTINUACIÓN
+% -----------------------------------------------------------------------------
+\multicolumn{8}{r}{\footnotesize\textit{Continúa en la siguiente página}} \\
+\endfoot
+\hline
+
+% -----------------------------------------------------------------------------
+% CAPTION Y LABEL
+% -----------------------------------------------------------------------------
+\caption[]{Tratamiento de enfermedades parasitarias}
+\label{tab:enfermedades_parasitarias}
+\endlastfoot
+
+% =============================================================================
+% CANINO – SARNA SARCÓPTICA
+% =============================================================================
+\multirow{6}{*}{\textbf{Canino}} &
+\multirow{6}{*}{17} &
+\multirow{6}{*}{Sarna sarcóptica} &
+Ranger & Ivermectina 1\% & 1\,ml/30\,kg SC &
+\multirow{6}{*}{3 días} &
+\multirow{6}{*}{Satisfactorio} \\
+\cline{4-6}
+& & & Galerfin & Clorfeniramina maleato & 0,2-2\,ml IV-IM & & \\
+\cline{4-6}
+& & & Atriben & Triamcinolona & 1\,ml/20\,kg IM-SC & & \\
+\cline{4-6}
+& & & Cefavet & Cefalexina & 1\,ml/20\,kg IM-SC & & \\
+\cline{4-6}
+& & & Dermo vet & Benzoato de bencilo, boro salicílico & Tópico & & \\
+\cline{4-6}
+& & & Impacto & Cipermetrina, clorpirifos, citronelal & 1\,ml/1\,litro de agua & & \\
+\hline
+
+% =============================================================================
+% CANINO – SARNA DEMODÉCICA
+% =============================================================================
+\multirow{5}{*}{\textbf{Canino}} &
+\multirow{5}{*}{1} &
+\multirow{5}{*}{Sarna demodécica} &
+Ranger & Ivermectina 1\% & 1\,ml/30\,kg SC &
+\multirow{5}{*}{3 días} &
+\multirow{5}{*}{Satisfactorio} \\
+\cline{4-6}
+& & & Atriben & Triamcinolona & 1\,ml/20\,kg IM-SC & & \\
+\cline{4-6}
+& & & Cefavet & Cefalexina & 1\,ml/20\,kg IM-SC & & \\
+\cline{4-6}
+& & & Dermo vet & Benzoato de bencilo, boro salicílico & Tópico & & \\
+\cline{4-6}
+& & & Impacto & Cipermetrina, clorpirifos, citronelal & 1\,ml/1\,litro de agua & & \\
+\hline
+
+\end{longtable}
+\end{landscape}
