@@ -1,18 +1,13 @@
+
+%\subsection*{Cuadro Nº 8: Desparacitaciones}
+%\vspace{0.3cm}
+
 \begin{landscape}
 
-\subsection*{Cuadro Nº 8: Desparacitaciones}
-\vspace{0.3cm}
-
-% =============================================================================
-% CONFIGURACIÓN TIPOGRÁFICA (NO TOCAR – FUNCIONA PERFECTAMENTE)
-% =============================================================================
-\fontsize{10pt}{15pt}\selectfont
-\setlength{\extrarowheight}{2pt}
 \setlength{\tabcolsep}{3pt}
+\fontsize{10pt}{10pt}\selectfont
+\setlength{\extrarowheight}{2pt}
 
-% =============================================================================
-% TABLA
-% =============================================================================
 \begin{longtable}{
   |>{\centering\arraybackslash}m{0.10\linewidth}
   |>{\centering\arraybackslash}m{0.05\linewidth}
@@ -24,89 +19,61 @@
   |>{\raggedright\arraybackslash}m{0.16\linewidth}|
 }
 
-% -----------------------------------------------------------------------------
-% ENCABEZADO (PRIMERA PÁGINA Y SIGUIENTES)
-% -----------------------------------------------------------------------------
+\caption{Desparasitaciones y aplicación de vitaminas/minerales realizadas}%
+\label{tab:desparasitaciones}\\
+\endfirsthead
+
 \hline
 \rowcolor{blue!10}
-\textbf{ESPECIE} &
-\textbf{Nº CASOS} &
-\textbf{CASO} &
-\textbf{FÁRMACO} &
-\textbf{PRINCIPIO ACTIVO} &
-\textbf{DOSIS/VÍA de ADMINISTRACIÓN} &
-\textbf{DURA\-CIÓN} &
-\textbf{OBSERVACIONES} \\
+\textbf{ESPECIE} & \textbf{Nº CASOS} & \textbf{CASO} & \textbf{FÁRMACO} &
+\textbf{PRINCIPIO ACTIVO} & \textbf{DOSIS/VÍA DE ADMINISTRACIÓN} &
+\parbox{\linewidth}{\textbf{DURA\-CIÓN}} & \textbf{OBSERVACIONES} \\
 \hline
 \endhead
 
-% -----------------------------------------------------------------------------
-% PIE DE CONTINUACIÓN
-% -----------------------------------------------------------------------------
 \hline
 \multicolumn{8}{r}{\footnotesize\textit{Continúa en la siguiente página}} \\
 \endfoot
 
-% -----------------------------------------------------------------------------
-% CAPTION Y LABEL
-% -----------------------------------------------------------------------------
-\caption[]{Desparasitaciones}
-\label{tab:desparasitaciones}
 \endlastfoot
 
-% =============================================================================
-% CANINO – DESPARASITACIÓN EXTERNA
-% =============================================================================
-\multirow{2}{*}{\textbf{Canino}} &
-\multirow{2}{*}{8} &
-\multirow{2}{*}{\parbox{\textwidth}{Desparasitación externa}} &
-Impacto & Cipermetrina, clorpirifos, citronelal & 1\,ml/1\,litro de agua &
-\multirow{2}{*}{1 mes} &
-\multirow{2}{*}{} \\
-\cline{4-6}
-& & & Galerfin & Clorfeniramina maleato & 0,2-2\,ml IV-IM & & \\
+\hline
+\rowcolor{blue!10}
+\textbf{ESPECIE} & \textbf{Nº CASOS} & \textbf{CASO} & \textbf{FÁRMACO} &
+\textbf{PRINCIPIO ACTIVO} & \textbf{DOSIS/VÍA DE ADMINISTRACIÓN} &
+\parbox{\linewidth}{\textbf{DURA\-CIÓN}} & \textbf{OBSERVACIONES} \\
 \hline
 
-% =============================================================================
-% CANINO – DESPARASITACIÓN INTERNA
-% =============================================================================
-\multirow{3}{*}{\textbf{Canino}} &
-\multirow{3}{*}{67} &
-\multirow{3}{*}{\parbox{\textwidth}{Desparasitación interna}} &
-Levocan & Levamisol & 5 gotas/1\,kg Oral &
-\multirow{3}{*}{3 meses} &
-\multirow{3}{*}{} \\
+% Desparasitación externa
+\multirow{2}{*}{\textbf{Canino}} & \multirow{2}{*}{8} & \multirow{2}{*}{\parbox{\linewidth}{Desparasitación externa}} &
+Impacto & Cipermetrina, clorpirifos, citronelal & 1\,ml/1\,litro de agua & \multirow{2}{*}{1 mes} & \multirow{2}{*}{--} \\
+\cline{4-6}
+& & & Galerfin & Clorfeniramina maleato & 0,2--2\,ml IV-IM & & \\
+\hline
+
+% Desparasitación interna
+\multirow{3}{*}{\textbf{Canino}} & \multirow{3}{*}{67} & \multirow{3}{*}{\parbox{\linewidth}{Desparasitación interna}} &
+Levocan & Levamisol & 5 gotas/1\,kg Oral & \multirow{3}{*}{3 meses} & \multirow{3}{*}{--} \\
 \cline{4-6}
 & & & Basken & Pamoato de pirantel, pamoato de oxantel & 1\,ml/1\,kg Oral & & \\
 \cline{4-6}
 & & & Vermic total & Praziquantel, pirantel pamoato, febantel & 1 tableta/10\,kg oral & & \\
 \hline
 
-% =============================================================================
-% CANINO – DESPARASITACIÓN INTERNA-EXTERNA
-% =============================================================================
-\multirow{2}{*}{\textbf{Canino}} &
-\multirow{2}{*}{58} &
-\multirow{2}{*}{\parbox{\textwidth}{Desparasitación interna-externa}} &
-Ranger & Ivermectina 1\% & 1\,ml/30\,kg SC &
-\multirow{2}{*}{3 meses} &
-\multirow{2}{*}{} \\
+% Desparasitación interna-externa
+\multirow{2}{*}{\textbf{Canino}} & \multirow{2}{*}{58} & \multirow{2}{*}{\parbox{\linewidth}{Desparasitación interna-externa}} &
+Ranger & Ivermectina 1\,\% & 1\,ml/30\,kg SC & \multirow{2}{*}{3 meses} & \multirow{2}{*}{--} \\
 \cline{4-6}
-& & & Galerfin & Clorfeniramina maleato & 0,2-2\,ml IV-IM & & \\
+& & & Galerfin & Clorfeniramina maleato & 0,2--2\,ml IV-IM & & \\
 \hline
 
-% =============================================================================
-% CANINO – APLICACIÓN DE VITAMINAS Y MINERALES
-% =============================================================================
-\multirow{2}{*}{\textbf{Canino}} &
-\multirow{2}{*}{125} &
-\multirow{2}{*}{\parbox{\textwidth}{Aplicación de\\ vitaminas y minera\-les}} &
-AminoLab Forte & Aminoácidos, dextrosa, cloruro de potasio, cloruro de sodio, cloruro de calcio, acetato de sodio, vitamina B1 B2 B6 B12 & 1\,ml/1\,kg IV &
-\multirow{2}{*}{Cada 15 días} &
-\multirow{2}{*}{} \\
+% Aplicación de vitaminas y minerales
+\multirow{2}{*}{\textbf{Canino}} & \multirow{2}{*}{125} & \multirow{2}{*}{\parbox{\linewidth}{Aplicación de vitaminas y minerales}} &
+AminoLab Forte & Aminoácidos, dextrosa, cloruro de potasio, cloruro de sodio, cloruro de calcio, acetato de sodio, vitamina B1 B2 B6 B12 & 1\,ml/1\,kg IV & \multirow{2}{*}{Cada 15\\días} & \multirow{4}{*}{--} \\
 \cline{4-6}
-& & & Complejo B & Vitamina B1, Vitamina B2, Vitamina B6, Vitamina B12, Vitamina B15 & 1\,ml/20\,kg IM-SC & & \\
+& & & Complejo B & Vitamina B1, B2, B6, B12, B15 & 1\,ml/20\,kg IM-SC & & \\
 \hline
 
 \end{longtable}
+
 \end{landscape}

@@ -1,11 +1,14 @@
 \begin{landscape}
 
-\subsection*{Cuadro Nº 10: Imagenología y otros servicios}
-\vspace{0.3cm}
+%\subsection*{Cuadro Nº 10: Imagenología y otros servicios}
+%\vspace{0.3cm}
 
-\fontsize{10pt}{15pt}\selectfont
-\setlength{\extrarowheight}{2pt}
+%\fontsize{10pt}{15pt}\selectfont
+%\setlength{\extrarowheight}{2pt}
+%\setlength{\tabcolsep}{3pt}
 \setlength{\tabcolsep}{3pt}
+\fontsize{10pt}{10pt}\selectfont
+\setlength{\extrarowheight}{2pt}
 
 \begin{longtable}{
     |>{\centering\arraybackslash}m{0.10\linewidth}
@@ -14,51 +17,55 @@
     |>{\raggedright\arraybackslash}m{0.41\linewidth}|
 }
 
+% -----------------------------------------------------------------------------
+% CAPTION Y LABEL
+% -----------------------------------------------------------------------------
+\caption[]{Imagenología y otros servicios}
+\label{tab:servicios}\\
+\endfirsthead
+
 % ================================
 % CABECERA DE LA TABLA
 % ================================
 \hline
 \rowcolor{blue!10}
-    \textbf{ESPECIE}
-    & \textbf{Nº DE CASOS}
-    & \textbf{CASO/ACTIVIDAD}
-    & \textbf{OBSERVACIONES} \\
+\textbf{ESPECIE} &
+\textbf{Nº DE CASOS} &
+\textbf{CASO/ACTIVIDAD} &
+\textbf{OBSERVACIONES} \\
 \hline
 \endhead
 
 % -----------------------------------------------------------------------------
-% CAPTION Y LABEL
+% PIE DE CONTINUACIÓN
 % -----------------------------------------------------------------------------
-\caption[]{Imagenología y otros servicios}
-\label{tab:servicios}
+\hline
+\multicolumn{8}{r}{\footnotesize\textit{Continúa en la siguiente página}} \\
+\endfoot
+
 \endlastfoot
+
+\hline
+\rowcolor{blue!10}
+\textbf{ESPECIE} &
+\textbf{Nº DE CASOS} &
+\textbf{CASO/ACTIVIDAD} &
+\textbf{OBSERVACIONES} \\
+\hline
 
 % ================================
 % DATOS - CANINO (filas fusionadas)
 % ================================
-\multirow{3}{*}{\centering\arraybackslash Canino} 
-    & 26 
-    & Rayos X
-    & \\
-\cline{2-4}
-    
-    & 7
-    & Ecografía
-    & \\
-\cline{2-4}
-    
-    & 1 
-    & Internación
-    & \\
+\multirow{3}{*}{\centering\arraybackslash Canino} &
+26 & Rayos X & \\
+\cline{2-4} & 7 & Ecografía & \\
+\cline{2-4} & 1 & Internación & \\
 \hline
 
 % ================================
 % DATOS - FELINO
 % ================================
-\centering Felino 
-    & 3
-    & Internación
-    & \\
+Felino & 3 & Internación & \\
 \hline
 
 \end{longtable}

@@ -1,14 +1,17 @@
 \begin{landscape}
 
-\subsection*{Cuadro Nº 2: Enfermedades bacterianas}
-\vspace{0.3cm}
+%\subsection*{Cuadro Nº 2: Enfermedades bacterianas}
+%\vspace{0.3cm}
 
 % =============================================================================
 % CONFIGURACIÓN TIPOGRÁFICA (NO TOCAR – FUNCIONA PERFECTAMENTE)
 % =============================================================================
-\fontsize{10pt}{15pt}\selectfont
-\setlength{\extrarowheight}{2pt}
+%\fontsize{10pt}{15pt}\selectfont
+%\setlength{\extrarowheight}{2pt}
+%\setlength{\tabcolsep}{3pt}
 \setlength{\tabcolsep}{3pt}
+\fontsize{10pt}{10pt}\selectfont
+\setlength{\extrarowheight}{2pt}
 
 % =============================================================================
 % TABLA
@@ -23,6 +26,11 @@
   |>{\centering\arraybackslash}m{0.06\linewidth}
   |>{\raggedright\arraybackslash}m{0.16\linewidth}|
 }
+
+% ──────────────── CAPTION COMO TÍTULO (solo en primera página) ────────────────
+\caption[]{Tratamiento de enfermedades infecciosas bacterianas}
+\label{tab:enfermedades_bacterianas}\\
+\endfirsthead
 
 % -----------------------------------------------------------------------------
 % ENCABEZADO (PRIMERA PÁGINA Y SIGUIENTES)
@@ -40,19 +48,31 @@
 \hline
 \endhead
 
-% -----------------------------------------------------------------------------
-% PIE DE CONTINUACIÓN
-% -----------------------------------------------------------------------------
+% ──────────────── PIE DE PÁGINA (continuación) ────────────────
 \hline
 \multicolumn{8}{r}{\footnotesize\textit{Continúa en la siguiente página}} \\
 \endfoot
 
+\endlastfoot
+
+\hline
+\rowcolor{blue!10}
+\textbf{ESPECIE} &
+\textbf{Nº CASOS} &
+\textbf{ENFERMEDAD} &
+\textbf{FÁRMACO} &
+\textbf{PRINCIPIO ACTIVO} &
+\textbf{DOSIS/VÍA de ADMINISTRACIÓN} &
+\textbf{TIEMPO} &
+\textbf{OBSERVACIONES} \\
+\hline
+
 % -----------------------------------------------------------------------------
 % CAPTION Y LABEL
 % -----------------------------------------------------------------------------
-\caption[]{Tratamiento de enfermedades infecciosas bacterianas}
-\label{tab:enfermedades_bacterianas}
-\endlastfoot
+%\caption[]{Tratamiento de enfermedades infecciosas bacterianas}
+%\label{tab:enfermedades_bacterianas}
+%\endlastfoot
 
 % =============================================================================
 % CANINO – TRAQUEO-BRONQUITIS

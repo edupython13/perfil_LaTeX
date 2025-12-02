@@ -1,14 +1,17 @@
 \begin{landscape}
 
-\subsection*{Cuadro Nº 4: Enfermedades parasitarias}
-\vspace{0.3cm}
+%\subsection*{Cuadro Nº 4: Enfermedades parasitarias}
+%\vspace{0.3cm}
 
 % =============================================================================
 % CONFIGURACIÓN TIPOGRÁFICA (NO TOCAR – FUNCIONA PERFECTAMENTE)
 % =============================================================================
-\fontsize{10pt}{15pt}\selectfont
-\setlength{\extrarowheight}{2pt}
+%\fontsize{10pt}{15pt}\selectfont
+%\setlength{\extrarowheight}{2pt}
+%\setlength{\tabcolsep}{3pt}
 \setlength{\tabcolsep}{3pt}
+\fontsize{10pt}{10pt}\selectfont
+\setlength{\extrarowheight}{2pt}
 
 % =============================================================================
 % TABLA
@@ -23,6 +26,13 @@
   |>{\centering\arraybackslash}m{0.06\linewidth}
   |>{\raggedright\arraybackslash}m{0.16\linewidth}|
 }
+
+% -----------------------------------------------------------------------------
+% CAPTION Y LABEL
+% -----------------------------------------------------------------------------
+\caption[]{Tratamiento de enfermedades parasitarias}
+\label{tab:enfermedades_parasitarias}\\
+\endfirsthead
 
 % -----------------------------------------------------------------------------
 % ENCABEZADO (PRIMERA PÁGINA Y SIGUIENTES)
@@ -47,12 +57,19 @@
 \endfoot
 \hline
 
-% -----------------------------------------------------------------------------
-% CAPTION Y LABEL
-% -----------------------------------------------------------------------------
-\caption[]{Tratamiento de enfermedades parasitarias}
-\label{tab:enfermedades_parasitarias}
 \endlastfoot
+
+\hline
+\rowcolor{blue!10}
+\textbf{ESPECIE} &
+\textbf{Nº CASOS} &
+\textbf{ENFERMEDAD} &
+\textbf{FÁRMACO} &
+\textbf{PRINCIPIO ACTIVO} &
+\textbf{DOSIS/VÍA de ADMINISTRACIÓN} &
+\textbf{TIEMPO} &
+\textbf{OBSERVACIONES} \\
+\hline
 
 % =============================================================================
 % CANINO – SARNA SARCÓPTICA

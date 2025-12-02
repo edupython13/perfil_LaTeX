@@ -1,14 +1,17 @@
 \begin{landscape}
 
-\subsection*{Cuadro Nº 5: Intoxicaciones}
-\vspace{0.3cm}
+%\subsection*{Cuadro Nº 5: Intoxicaciones}
+%\vspace{0.3cm}
 
 % =============================================================================
 % CONFIGURACIÓN TIPOGRÁFICA (NO TOCAR – FUNCIONA PERFECTAMENTE)
 % =============================================================================
-\fontsize{10pt}{15pt}\selectfont
-\setlength{\extrarowheight}{2pt}
+%\fontsize{10pt}{15pt}\selectfont
+%\setlength{\extrarowheight}{2pt}
+%\setlength{\tabcolsep}{3pt}
 \setlength{\tabcolsep}{3pt}
+\fontsize{10pt}{10pt}\selectfont
+\setlength{\extrarowheight}{2pt}
 
 % =============================================================================
 % TABLA
@@ -23,6 +26,13 @@
   |>{\centering\arraybackslash}m{0.06\linewidth}
   |>{\raggedright\arraybackslash}m{0.16\linewidth}|
 }
+
+% -----------------------------------------------------------------------------
+% CAPTION Y LABEL
+% -----------------------------------------------------------------------------
+\caption[]{Tratamiento de intoxicaciones}
+\label{tab:intoxicaciones}\\
+\endfirsthead
 
 % -----------------------------------------------------------------------------
 % ENCABEZADO (PRIMERA PÁGINA Y SIGUIENTES)
@@ -47,12 +57,19 @@
 \multicolumn{8}{r}{\footnotesize\textit{Continúa en la siguiente página}} \\
 \endfoot
 
-% -----------------------------------------------------------------------------
-% CAPTION Y LABEL
-% -----------------------------------------------------------------------------
-\caption[]{Tratamiento de intoxicaciones}
-\label{tab:intoxicaciones}
 \endlastfoot
+
+\hline
+\rowcolor{blue!10}
+\textbf{ESPECIE} &
+\textbf{Nº CASOS} &
+\textbf{ENFERMEDAD} &
+\textbf{FÁRMACO} &
+\textbf{PRINCIPIO ACTIVO} &
+\textbf{DOSIS/VÍA de ADMINISTRACIÓN} &
+\textbf{TIEMPO} &
+\textbf{OBSERVACIONES} \\
+\hline
 
 % =============================================================================
 % CANINO – INTOXICACIÓN ALIMENTICIA
