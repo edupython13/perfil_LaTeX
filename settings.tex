@@ -14,8 +14,8 @@
 \usepackage[spanish, es-noindentfirst, es-nodecimaldot]{babel}
 \usepackage{newtxtext, newtxmath}
 %\usepackage[newtx]
-\usepackage{microtype}
-\DisableLigatures{encoding = *, family = *}
+%\usepackage{microtype}
+%\DisableLigatures{encoding = *, family = *}
 \usepackage{textcase} % Requerido para \MakeUppercase en TOC
 
 % ===================================================================
@@ -30,7 +30,8 @@
   noheadfoot,
   headheight=0pt,
   headsep=0pt,
-  heightrounded
+  heightrounded,
+  showframe=false
 ]{geometry}
 
 % Posiciona la numeración a 1.5 cm del borde inferior
@@ -44,10 +45,10 @@
 %\renewcommand{\arraystretch}{1.5}
 %\doublespacing
 \usepackage{parskip}
-\setlength{\parindent}{0pt}
+%\setlength{\parindent}{0pt}
 \pagestyle{plain}
 \raggedbottom
-\sloppy
+%\sloppy
 
 % ===================================================================
 % 5. PAQUETES DE TABLAS Y ESTRUCTURA
@@ -84,8 +85,8 @@
 % ===================================================================
 \usepackage[compact]{titlesec}
 \usepackage[nottoc, numbib]{tocbibind}
-\usepackage[fixlanguage]{babelbib}
-\selectbiblanguage{spanish}
+%\usepackage[fixlanguage]{babelbib}
+%\selectbiblanguage{spanish}
 \usepackage[numbers, sort&compress]{natbib}
 \usepackage{tocloft}
 

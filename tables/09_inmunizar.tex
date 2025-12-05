@@ -1,67 +1,73 @@
 %\subsection*{Cuadro Nº 9: Inmunizaciones}
 %\vspace{0.3cm}
 
+% 09_vacunaciones.tex
 \begin{landscape}
 
-\setlength{\tabcolsep}{3pt}
+% =============================================================================
+% CONFIGURACIÓN (basada en tu modelo)
+% =============================================================================
+\setlength{\tabcolsep}{1pt}
 \fontsize{10pt}{10pt}\selectfont
-\setlength{\extrarowheight}{2pt}
+\setlength{\extrarowheight}{3pt}
 
+% =============================================================================
+% LONGTABLE CON CAPTION AL PRINCIPIO
+% =============================================================================
 \begin{longtable}{
-  |>{\centering\arraybackslash}m{0.10\linewidth}
-  |>{\centering\arraybackslash}m{0.06\linewidth}
-  |>{\centering\arraybackslash}m{0.20\linewidth}
-  |>{\centering\arraybackslash}m{0.14\linewidth}
-  |>{\raggedright\arraybackslash}m{0.28\linewidth}
-  |>{\centering\arraybackslash}m{0.12\linewidth}
-  |>{\centering\arraybackslash}m{0.10\linewidth}|}
+  |>{\centering\arraybackslash}m{0.08\linewidth}           % ESPECIE
+  |>{\centering\arraybackslash}m{0.08\linewidth}           % Nº DE CASOS
+  |>{\raggedright\arraybackslash}m{0.26\linewidth}          % INMUNIZACION
+  |>{\raggedright\arraybackslash}m{0.14\linewidth}          % FÁRMACO
+  |>{\raggedright\arraybackslash}m{0.18\linewidth}          % PRINCIPIO ACTIVO
+  |>{\centering\arraybackslash}m{0.14\linewidth}           % DOSIS/VÍA
+  |>{\raggedright\arraybackslash}m{0.10\linewidth}|         % OBSERVACIONES
+}
 
-\caption{Inmunizaciones realizadas}%
-\label{tab:inmunizaciones}\\
+% ──────────────── CAPTION COMO TÍTULO (solo en primera página) ────────────────
+\caption{Registro de Vacunaciones Aplicadas durante el periodo de internado}
+\label{tab:vacunaciones}
 \endfirsthead
 
+\caption[]{(Continuación) Registro de Vacunaciones Aplicadas durante el periodo de internado}
+
+% ──────────────── ENCABEZADO PARA PÁGINAS SIGUIENTES ────────────────
 \hline
 \rowcolor{blue!10}
-\textbf{ESPECIE} & \textbf{Nº CASOS} & \textbf{CASO} & \textbf{FÁRMACO} &
-\textbf{PRINCIPIO ACTIVO} & \textbf{DOSIS/VÍA DE ADMINISTRACIÓN} &
-\textbf{OBSERVACIONES} \\
+\textbf{ESPECIE} & \textbf{Nº DE CASOS} & \textbf{INMUNIZACIÓN} & \textbf{FÁRMACO} & 
+\textbf{PRINCIPIO ACTIVO} & \textbf{DOSIS/VÍA DE ADMINISTRACIÓN} & \textbf{OBSERVA\-CIONES} \\
 \hline
 \endhead
 
+% ──────────────── PIE DE PÁGINA (continuación) ────────────────
 \hline
-\multicolumn{7}{r}{\footnotesize\textit{Continúa en la siguiente página}} \\
+\multicolumn{7}{r}{\footnotesize\textit{Continúa en la siguiente página \ldots}}
 \endfoot
 
+% ──────────────── PIE FINAL ────────────────
+\hline
+\multicolumn{7}{l}{\footnotesize\textit{\textbf{Fuente}: Elaboración propia.}}
 \endlastfoot
 
+% ──────────────── ENCABEZADO PRIMERA PÁGINA (con color) ────────────────
 \hline
 \rowcolor{blue!10}
-\textbf{ESPECIE} & \textbf{Nº CASOS} & \textbf{CASO} & \textbf{FÁRMACO} &
-\textbf{PRINCIPIO ACTIVO} & \textbf{DOSIS/VÍA DE ADMINISTRACIÓN} &
-\textbf{OBSERVACIONES} \\
+\textbf{ESPECIE} & \textbf{Nº DE CASOS} & \textbf{INMUNIZACIÓN} & \textbf{FÁRMACO} & 
+\textbf{PRINCIPIO ACTIVO} & \textbf{DOSIS/VÍA DE ADMINISTRACIÓN} & \textbf{OBSERVA\-CIONES} \\
 \hline
 
-% Parvovirus canino
-\multirow{2}{*}{\textbf{Canino}} & 97 & Parvovirus &
-Hipradog pv & Virus vivo modificado e inactivado &
-\multirow{2}{*}{1\,ml/animal SC} & \multirow{2}{*}{--} \\
-\cline{2-5}
-& 36 & \parbox{\linewidth}{\centering Parvovirus, moquillo,\\hepatitis, laringotraqueítis,\\traqueobronquitis, parainfluenza,\\leptospirosis} &
-Hipradog p7\\Heptavalente & Virus vivo modificado e inactivado & & \\
-\hline
+% =============================================================================
+% CONTENIDO DE LA TABLA (extraído del PDF '09_vacunaciones.pdf')
+% =============================================================================
 
-% Rabia canina
-\textbf{Canino} & 1 & Rabia &
-Rabvac 3TK & Virus inactivado &
-1\,ml/animal SC & -- \\
+\multirow{3}{*}{\textbf{Canino}} & 97 & Parvovirus & Hipradog pv & Virus vivo modificado e inactivado & 1ml/animal SC & \\
+\cline{2-7}
+& 36 & Parvovirus, moquillo, hepatitis, laringotraqueitis, traqueobronquitis, parainfluenza, leptospirosis & Hipradog p7 Heptavalente & Virus vivo modificado e inactivado & 1ml/animal SC & \\
+\cline{2-7}
+& 1  & Rabia & Rabvac 3TK & Virus inactivado & 1ml/animal SC & \\
 \hline
-
-% Triple felina
-\textbf{Felino} & 5 & \parbox{\linewidth}{\centering Panleucopenia,\\rinotraqueítis,\\calicivirus} &
-Triple felina & Virus inactivado &
-1\,ml/animal SC & -- \\
+\textbf{Felino} & 5  & Panleucopenia, rinotraqueitis, calcivirus & Triple felina & Virus inactivado & 1ml/animal SC & \\
 \hline
 
 \end{longtable}
-
 \end{landscape}

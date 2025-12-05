@@ -1,91 +1,77 @@
+% 06_tramatismo.tex
 \begin{landscape}
 
-%\subsection*{Cuadro Nº 6: Traumatismos}
+%\section*{REGISTRO DE TRAUMATISMOS}
 %\vspace{0.3cm}
 
 % =============================================================================
-% CONFIGURACIÓN TIPOGRÁFICA (NO TOCAR – FUNCIONA PERFECTAMENTE)
+% CONFIGURACIÓN (basada en tu modelo)
 % =============================================================================
-%\fontsize{10pt}{15pt}\selectfont
-%\setlength{\extrarowheight}{2pt}
-%\setlength{\tabcolsep}{3pt}
-\setlength{\tabcolsep}{3pt}
-\fontsize{10pt}{10pt}\selectfont
-\setlength{\extrarowheight}{2pt}
+\setlength{\tabcolsep}{1pt}
+\fontsize{10pt}{10pt}\selectfont % Ligeramente reducido para un mejor ajuste
+\setlength{\extrarowheight}{3pt}
 
 % =============================================================================
-% TABLA
+% LONGTABLE CON CAPTION AL PRINCIPIO
 % =============================================================================
 \begin{longtable}{
-  |>{\centering\arraybackslash}m{0.10\linewidth}
-  |>{\centering\arraybackslash}m{0.05\linewidth}
-  |>{\centering\arraybackslash}m{0.13\linewidth}
-  |>{\raggedright\arraybackslash}m{0.13\linewidth}
-  |>{\raggedright\arraybackslash}m{0.18\linewidth}
-  |>{\raggedright\arraybackslash}m{0.14\linewidth}
-  |>{\centering\arraybackslash}m{0.06\linewidth}
-  |>{\raggedright\arraybackslash}m{0.16\linewidth}|
+  |>{\centering\arraybackslash}m{0.07\linewidth}           % ESPECIE
+  |>{\centering\arraybackslash}m{0.07\linewidth}           % Nº CASOS
+  |>{\centering\arraybackslash}m{0.14\linewidth}           % ENFERMEDADES
+  |>{\raggedright\arraybackslash}m{0.12\linewidth}          % FÁRMACO
+  |>{\raggedright\arraybackslash}m{0.24\linewidth}          % PRINCIPIO ACTIVO
+  |>{\raggedright\arraybackslash}m{0.15\linewidth}          % DOSIS/VÍA
+  |>{\centering\arraybackslash}m{0.07\linewidth}            % TIEMPO
+  |>{\raggedright\arraybackslash}m{0.12\linewidth}|         % OBSERVACIONES
 }
 
-% -----------------------------------------------------------------------------
-% CAPTION Y LABEL
-% -----------------------------------------------------------------------------
-\caption[]{Tratamiento de traumatismos}
-\label{tab:traumatismos}\\
+% ──────────────── CAPTION COMO TÍTULO (solo en primera página) ────────────────
+\caption{Registro de Tratamientos para Traumatismos}
+\label{tab:traumatismos}
 \endfirsthead
 
-% -----------------------------------------------------------------------------
-% ENCABEZADO (PRIMERA PÁGINA Y SIGUIENTES)
-% -----------------------------------------------------------------------------
+\caption[]{(Continuación) Registro de Tratamientos para Traumatismos}
+
+% ──────────────── ENCABEZADO PARA PÁGINAS SIGUIENTES ────────────────
 \hline
 \rowcolor{blue!10}
-\textbf{ESPECIE} &
-\textbf{Nº CASOS} &
-\textbf{ENFERMEDAD} &
-\textbf{FÁRMACO} &
-\textbf{PRINCIPIO ACTIVO} &
-\textbf{DOSIS/VÍA de ADMINISTRACIÓN} &
-\textbf{TIEMPO} &
-\textbf{OBSERVACIONES} \\
+\textbf{ESPECIE} & \textbf{Nº DE CASOS} & \textbf{ENFERMEDADES} & \textbf{FÁRMACO} & 
+\textbf{PRINCIPIO ACTIVO} & \textbf{DOSIS/VÍA DE ADMINISTRACIÓN} & 
+\textbf{DURA\-CIÓN} & \textbf{OBSERVACIO\-NES} \\
 \hline
 \endhead
 
-% -----------------------------------------------------------------------------
-% PIE DE CONTINUACIÓN
-% -----------------------------------------------------------------------------
+% ──────────────── PIE DE PÁGINA (continuación) ────────────────
 \hline
-\multicolumn{8}{r}{\footnotesize\textit{Continúa en la siguiente página}} \\
+\multicolumn{8}{r}{\footnotesize\textit{Continúa en la siguiente página \ldots}}
 \endfoot
 
+% ──────────────── PIE FINAL ────────────────
+\hline
+\multicolumn{8}{l}{\footnotesize\textit{\textbf{Fuente}: Elaboración propia.}}
 \endlastfoot
 
+% ──────────────── ENCABEZADO PRIMERA PÁGINA (con color) ────────────────
 \hline
 \rowcolor{blue!10}
-\textbf{ESPECIE} &
-\textbf{Nº CASOS} &
-\textbf{ENFERMEDAD} &
-\textbf{FÁRMACO} &
-\textbf{PRINCIPIO ACTIVO} &
-\textbf{DOSIS/VÍA de ADMINISTRACIÓN} &
-\textbf{TIEMPO} &
-\textbf{OBSERVACIONES} \\
+\textbf{ESPECIE} & \textbf{Nº DE CASOS} & \textbf{ENFERMEDADES} & \textbf{FÁRMACO} & 
+\textbf{PRINCIPIO ACTIVO} & \textbf{DOSIS/VÍA DE ADMINISTRACIÓN} & 
+\textbf{DURA\-CIÓN} & \textbf{OBSERVACIO\-NES} \\
 \hline
 
 % =============================================================================
-% CANINO – TRAUMATISMO (FRACTURA)
+% CONTENIDO DE LA TABLA (extraído del PDF '06_tramatismo.pdf')
 % =============================================================================
-\multirow{7}{*}{\textbf{Canino}} &
-\multirow{7}{*}{4} &
-\multirow{7}{*}{\parbox{\linewidth}{Traumatismo (fractura)}} &
-Xilacina & Xilacina & 1\,ml/20\,kg IV-IM &
-\multirow{7}{*}{\parbox{\linewidth}{3-4 semanas}} &
-\multirow{7}{*}{} \\
+
+% Canino – Traumatismo (fractura)
+\multirow{7}{*}{\textbf{Canino}} & \multirow{7}{*}{4} & \multirow{7}{*}{\parbox{\linewidth}{\centering{Traumatismo\\(fractura)}}} &
+Xilacina & Xilacina & 1ml/20kg IV-IM & \multirow{7}{*}{\parbox{\linewidth}{3-4 semanas}} &  \\
 \cline{4-6}
-& & & Lidocaína & Lidocaína & Según criterio médico & & \\
+& & & Lidocaina & Lidocaina & Según criterio médico & & \\
 \cline{4-6}
-& & & Oximed & Oxitetraciclina, bencidamina & 1\,ml/5\,kg IM-SC & & \\
+& & & Oximed & Oxitetraciclina, bencidamina & 1ml/5kg IM-SC & & \\
 \cline{4-6}
-& & & Desalgina & Dipirona & 1\,ml/10\,kg IV-IM-SC & & \\
+& & & Desalgina & Dipirona & 1ml/10kg IV-IM-SC & & \\
 \cline{4-6}
 & & & Agua oxigenada & Peróxido de hidrógeno & Tópico & & \\
 \cline{4-6}
@@ -94,38 +80,26 @@ Xilacina & Xilacina & 1\,ml/20\,kg IV-IM &
 & & & Galmetrim plus & Cipermetrina, imidacloprid, sulfadiazina de plata & Local externo & & \\
 \hline
 
-% =============================================================================
-% CANINO – POLITRAUMATISMO
-% =============================================================================
-\multirow{4}{*}{\textbf{Canino}} &
-\multirow{4}{*}{24} &
-\multirow{4}{*}{Politraumatismo} &
-Desalgina & Dipirona & 1\,ml/10\,kg IV-IM-SC &
-\multirow{4}{*}{3-5 días} &
-\multirow{4}{*}{Satisfactorio} \\
+% Canino – Politraumatismo
+\multirow{4}{*}{\textbf{Canino}} & \multirow{4}{*}{24} & \multirow{4}{*}{Politraumatismo} &
+Desalgina & Dipirona & 1ml/10kg IV-IM-SC & \multirow{4}{*}{3-5 días} & \multirow{4}{*}{Satisfactorio} \\
 \cline{4-6}
-& & & Oximed & Oxitetraciclina, bencidamina & 1\,ml/5\,kg IM-SC & & \\
+& & & Oximed & Oxitetraciclina, bencidamina & 1ml/5kg IM-SC & & \\
 \cline{4-6}
-& & & Complejo B & Vitamina B1, Vitamina B2, Vitamina B6, Vitamina B12, Vitamina B15 & 1\,ml/20\,kg IM-SC & & \\
+& & & Complejo B & Vitamina B1, Vitamina B2, Vitamina B6, Vitamina B12, Vitamina B15 & 1ml/20kg IM-SC & & \\
 \cline{4-6}
-& & & Diclofenaco & Diclofenaco & 1\,ml/20\,kg IV-IM & & \\
+& & & Diclofenaco & Diclofenaco & 1ml/20kg IV-IM & & \\
 \hline
 
-% =============================================================================
-% FELINO – CONTUSIÓN
-% =============================================================================
-\multirow{4}{*}{\textbf{Felino}} &
-\multirow{4}{*}{2} &
-\multirow{4}{*}{Contusión} &
-Ankofen & Ketoprofeno & 0,5\,ml/25\,kg IM &
-\multirow{4}{*}{3-5 días} &
-\multirow{4}{*}{Satisfactorio} \\
+% Felino – Contusión
+\multirow{4}{*}{\textbf{Felino}} & \multirow{4}{*}{2} & \multirow{4}{*}{Contusión} &
+Ankofen & Ketoprofeno & 0,5ml/25kg IM & \multirow{4}{*}{3-5 días} & \multirow{4}{*}{Satisfactorio} \\
 \cline{4-6}
 & & & Agua oxigenada & Peróxido de hidrógeno & Tópico & & \\
 \cline{4-6}
 & & & Yodo podovidona & Complejo de yodo molecular con podovidona & Tópico & & \\
 \cline{4-6}
-& & & Emplasto cicatrizante & Ácido galotánico, podovidona, yodo metálico, yodo de potasio & Tópico & & \\
+& & & Emplasto cicatrizante & Ácido galotanico, podovidona, yodo metálico, yodo de potasio & Tópico & & \\
 \hline
 
 \end{longtable}

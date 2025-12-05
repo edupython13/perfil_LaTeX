@@ -1,71 +1,67 @@
-\begin{landscape}
-
 %\subsection*{Cuadro Nº 10: Imagenología y otros servicios}
 %\vspace{0.3cm}
 
-%\fontsize{10pt}{15pt}\selectfont
-%\setlength{\extrarowheight}{2pt}
-%\setlength{\tabcolsep}{3pt}
-\setlength{\tabcolsep}{3pt}
-\fontsize{10pt}{10pt}\selectfont
-\setlength{\extrarowheight}{2pt}
+% 10_otros.tex
+\begin{landscape}
 
+% =============================================================================
+% CONFIGURACIÓN (basada en tu modelo)
+% =============================================================================
+\setlength{\tabcolsep}{1pt}
+\fontsize{10pt}{10pt}\selectfont
+\setlength{\extrarowheight}{3pt}
+
+% =============================================================================
+% LONGTABLE CON CAPTION AL PRINCIPIO
+% =============================================================================
 \begin{longtable}{
-    |>{\centering\arraybackslash}m{0.10\linewidth}
-    |>{\centering\arraybackslash}m{0.07\linewidth}
-    |>{\raggedright\arraybackslash}m{0.40\linewidth}
-    |>{\raggedright\arraybackslash}m{0.41\linewidth}|
+  |>{\centering\arraybackslash}m{0.16\linewidth}           % ESPECIE
+  |>{\centering\arraybackslash}m{0.16\linewidth}           % Nº DE CASOS
+  |>{\raggedright\arraybackslash}m{0.36\linewidth}          % CASO/ACTIVIDAD
+  |>{\raggedright\arraybackslash}m{0.30\linewidth}|         % OBSERVACIONES
 }
 
-% -----------------------------------------------------------------------------
-% CAPTION Y LABEL
-% -----------------------------------------------------------------------------
-\caption[]{Imagenología y otros servicios}
-\label{tab:servicios}\\
+% ──────────────── CAPTION COMO TÍTULO (solo en primera página) ────────────────
+\caption{Imagenología y Otras Actividades Clínicas}
+\label{tab:otras_actividades}
 \endfirsthead
 
-% ================================
-% CABECERA DE LA TABLA
-% ================================
+\caption[]{(Continuación) Imagenología y Otras Actividades Clínicas}
+
+% ──────────────── ENCABEZADO PARA PÁGINAS SIGUIENTES ────────────────
 \hline
 \rowcolor{blue!10}
-\textbf{ESPECIE} &
-\textbf{Nº DE CASOS} &
-\textbf{CASO/ACTIVIDAD} &
-\textbf{OBSERVACIONES} \\
+\textbf{ESPECIE} & \textbf{Nº DE CASOS} & \textbf{CASO/ACTIVIDAD} & \textbf{OBSERVACIONES} \\
 \hline
 \endhead
 
-% -----------------------------------------------------------------------------
-% PIE DE CONTINUACIÓN
-% -----------------------------------------------------------------------------
+% ──────────────── PIE DE PÁGINA (continuación) ────────────────
 \hline
-\multicolumn{8}{r}{\footnotesize\textit{Continúa en la siguiente página}} \\
+\multicolumn{4}{r}{\footnotesize\textit{Continúa en la siguiente página \ldots}}
 \endfoot
 
+% ──────────────── PIE FINAL ────────────────
+\hline
+\multicolumn{4}{l}{\footnotesize\textit{\textbf{Fuente}: Elaboración propia.}}
 \endlastfoot
 
+% ──────────────── ENCABEZADO PRIMERA PÁGINA (con color) ────────────────
 \hline
 \rowcolor{blue!10}
-\textbf{ESPECIE} &
-\textbf{Nº DE CASOS} &
-\textbf{CASO/ACTIVIDAD} &
-\textbf{OBSERVACIONES} \\
+\textbf{ESPECIE} & \textbf{Nº DE CASOS} & \textbf{CASO/ACTIVIDAD} & \textbf{OBSERVACIONES} \\
 \hline
 
-% ================================
-% DATOS - CANINO (filas fusionadas)
-% ================================
-\multirow{3}{*}{\centering\arraybackslash Canino} &
-26 & Rayos X & \\
-\cline{2-4} & 7 & Ecografía & \\
-\cline{2-4} & 1 & Internación & \\
-\hline
+% =============================================================================
+% CONTENIDO DE LA TABLA (extraído del PDF '10_otros.pdf')
+% =============================================================================
 
-% ================================
-% DATOS - FELINO
-% ================================
-Felino & 3 & Internación & \\
+\multirow{3}{*}{\textbf{Canino}} & 26 & Rayos X & \\
+\cline{2-4}
+& 7  & Ecografía & \\
+\cline{2-4}
+& 1  & Internación & \\
+\hline
+\textbf{Felino} & 3  & Internación & \\
 \hline
 
 \end{longtable}

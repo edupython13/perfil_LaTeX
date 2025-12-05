@@ -2,12 +2,11 @@
 *.aux
 *.log
 *.out
-*.toc
-*.lof
-*.lot
-*.fls
-*.fdb_latexmk
 *.synctex.gz
+*.toc
+*.brf
+*.fdb_latexmk
+*.fls
 
 # Archivos de bibliografía
 *.bbl
