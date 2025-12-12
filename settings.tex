@@ -22,16 +22,9 @@
 % 3. GEOMETRÍA DE PÁGINA (MÁRGENES ESTRICTOS)
 % ===================================================================
 \usepackage[
-  letterpaper,
-  left=3.5cm,
-  right=3.0cm,
-  top=3.0cm,
-  bottom=3.0cm,
-  noheadfoot,
-  headheight=0pt,
-  headsep=0pt,
-  heightrounded,
-  showframe=false
+	letterpaper, left=3.5cm, right=3.0cm, top=3.0cm, bottom=3.0cm,
+	%noheadfoot, headheight=16pt, headsep=10pt,
+	heightrounded, showframe=false
 ]{geometry}
 
 % Posiciona la numeración a 1.5 cm del borde inferior
@@ -57,42 +50,47 @@
 \usepackage{float}
 \usepackage{enumitem}
 \usepackage{multirow}
-\usepackage{rotating}
+%\usepackage{rotating}
 \usepackage{longtable}
 \usepackage{array}
-\usepackage{tabularx}
+%\usepackage{tabularx}
+%\usepackage{xltabular}
 \usepackage{booktabs}
 \usepackage{pdflscape}
 \usepackage[table]{xcolor}
+\usepackage{ragged2e}
 \usepackage{caption}
 \captionsetup{
-  font=small,
-  labelfont=bf,
-  justification=centering,
-  labelsep=period,
-  skip=6pt
+	font=normalsize,
+	labelfont=bf,
+	%justification=centering,
+	labelsep=period,
+	skip=6pt
 }
 \usepackage{multicol}
 \usepackage{calc}
-\usepackage{ragged2e}
+
 \usepackage{ifthen} % Mantenido para funcionalidad de \pdft
 
 \newcolumntype{J}{>{\Justifying\arraybackslash}X}
 \newcolumntype{C}{>{\Centering\arraybackslash}X}
+
+
+\usepackage{bookmark}
 
 % ===================================================================
 % 6. TÍTULOS, TOC Y BIBLIOGRAFÍA
 % ===================================================================
 \usepackage[compact]{titlesec}
 \usepackage[nottoc, numbib]{tocbibind}
-%\usepackage[fixlanguage]{babelbib}
-%\selectbiblanguage{spanish}
+\usepackage[fixlanguage]{babelbib}
+\selectbiblanguage{spanish}
 \usepackage[numbers, sort&compress]{natbib}
 \usepackage{tocloft}
 
 % === ÍNDICE GENERAL (CORRECTO, CENTRADO, MAYÚSCULAS, ESTILO GLOBAL) ===
 \addto\captionsspanish{%
-  \renewcommand{\contentsname}{\centering\normalsize\bfseries ÍNDICE GENERAL}%
+	\renewcommand{\contentsname}{\centering\normalsize\bfseries ÍNDICE GENERAL}%
 }
 \renewcommand{\cfttoctitlefont}{\centering\normalsize\bfseries}
 %\renewcommand{\cftaftertoctitle}{\\[1.5\baselineskip]}% Respeta interlineado 1.5
@@ -122,19 +120,19 @@
 % 7. COMANDOS PERSONALIZADOS (Optimizados)
 % ===================================================================
 \newcommand{\pdf}[3]{%
-  \begin{center}%
-    \includegraphics[scale=#1, page=#2]{#3}%
-  \end{center}%
+	\begin{center}%
+		\includegraphics[scale=#1, page=#2]{#3}%
+	\end{center}%
 }
 
 \newcommand{\pdft}[5]{%
-  \begin{center}%
-    \ifthenelse{\equal{#5}{true}}{%
-      \includegraphics[scale=#1, page=#2, trim=#4, clip]{#3}%
-    }{%
-      \includegraphics[scale=#1, page=#2]{#3}%
-    }%
-  \end{center}%
+	\begin{center}%
+		\ifthenelse{\equal{#5}{true}}{%
+			\includegraphics[scale=#1, page=#2, trim=#4, clip]{#3}%
+		}{%
+			\includegraphics[scale=#1, page=#2]{#3}%
+		}%
+	\end{center}%
 }
 
 \newcommand{\xcite}[1]{(\citeauthor{#1}, \citeyear{#1})}
@@ -142,34 +140,34 @@
 \newcounter{tocleftparcounter}
 \makeatletter
 \newcommand{\tocleftparagraph}[1]{%
-  \stepcounter{tocleftparcounter}%
-  \edef\tocleftparlabel{tocleftpar.\thetocleftparcounter}%
-  \hypertarget{\tocleftparlabel}{}%
-  
-  \addtocontents{toc}{%
-    \protect\normalsize\protect\l@section{%
-      \protect\hyperlink{\tocleftparlabel}{%
-        \protect\RaggedRight\protect\textbf{#1}\protect\cftsecleader%
-      }%
-    }{%
-      \protect\hyperlink{\tocleftparlabel}{%
-        \protect\cftsecpagefont\protect\textbf{\thepage}%
-      }%
-    }%
-  }%
+	\stepcounter{tocleftparcounter}%
+	\edef\tocleftparlabel{tocleftpar.\thetocleftparcounter}%
+	\hypertarget{\tocleftparlabel}{}%
+	
+	\addtocontents{toc}{%
+		\protect\normalsize\protect\l@section{%
+			\protect\hyperlink{\tocleftparlabel}{%
+				\protect\RaggedRight\protect\textbf{#1}\protect\cftsecleader%
+			}%
+		}{%
+			\protect\hyperlink{\tocleftparlabel}{%
+				\protect\cftsecpagefont\protect\textbf{\thepage}%
+			}%
+		}%
+	}%
 }
 \makeatother
 
 \newcommand{\leftitemize}[1]{%
-  \begin{itemize}[leftmargin=*, labelsep=4pt, itemindent=10pt, topsep=0pt, partopsep=0pt, parsep=0pt]%
-    #1%
-  \end{itemize}%
+	\begin{itemize}[leftmargin=*, labelsep=4pt, itemindent=10pt, topsep=0pt, partopsep=0pt, parsep=0pt]%
+		#1%
+	\end{itemize}%
 }
 
 \newcommand{\leftenumerate}[1]{%
-  \begin{enumerate}[leftmargin=*, labelsep=4pt, itemindent=12pt, topsep=0pt, partopsep=0pt, parsep=0pt, label=\arabic{enumi}.]%
-    #1%
-  \end{enumerate}%
+	\begin{enumerate}[leftmargin=*, labelsep=4pt, itemindent=12pt, topsep=0pt, partopsep=0pt, parsep=0pt, label=\arabic{enumi}.]%
+		#1%
+	\end{enumerate}%
 }
 
 \providecommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
@@ -179,33 +177,33 @@
 % ===================================================================
 \usepackage{hyperref}
 \hypersetup{
-  pdftitle={Clínica de Animales Menores y Mayores},
-  pdfauthor={Luis Eduardo Miranda Barja},
-  pdfsubject={Medicina Veterinaria y Zootecnia},
-  pdfkeywords={Veterinaria, Zootecnia, Internado, Clínica},
-  pdfcreator={LaTeX con pdfTeX},
-  pdfproducer={TeX Live 2025},
-  hidelinks,
-  colorlinks=false,
-  linkcolor=black,
-  citecolor=black,
-  urlcolor=gray,
-  %bookmarks=true,
-  bookmarksopen=true,
-  bookmarksnumbered=true,
-  pdfpagemode=UseOutlines,
-  pdfstartview=FitH,
-  pdfborder={0 0 0}
+	pdftitle={Clínica de Animales Menores y Mayores},
+	pdfauthor={Luis Eduardo Miranda Barja},
+	pdfsubject={Medicina Veterinaria y Zootecnia},
+	pdfkeywords={Veterinaria, Zootecnia, Internado, Clínica},
+	pdfcreator={LaTeX con pdfTeX},
+	pdfproducer={TeX Live 2025},
+	hidelinks,
+	colorlinks=false,
+	linkcolor=black,
+	citecolor=black,
+	urlcolor=gray,
+	%bookmarks=true,
+	bookmarksopen=true,
+	bookmarksnumbered=true,
+	pdfpagemode=UseOutlines,
+	pdfstartview=FitH,
+	pdfborder={0 0 0}
 }
 
 % -------------------------------
 % 9. PDF/A-1b FINAL
 % -------------------------------
 \pdfinfo{
-  /Title (Clínica de Animales Menores y Mayores)
-  /Author (Luis Eduardo Miranda Barja)
-  /Subject (Medicina Veterinaria y Zootecnia)
-  /Keywords (Veterinaria, Zootecnia, Internado, Clínica)
+	/Title (Clínica de Animales Menores y Mayores)
+	/Author (Luis Eduardo Miranda Barja)
+	/Subject (Medicina Veterinaria y Zootecnia)
+	/Keywords (Veterinaria, Zootecnia, Internado, Clínica)
 }
 
 % -------------------------------

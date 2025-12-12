@@ -4,65 +4,73 @@
 % 10_otros.tex
 \begin{landscape}
 
-% =============================================================================
-% CONFIGURACIÓN (basada en tu modelo)
-% =============================================================================
-\setlength{\tabcolsep}{1pt}
-\fontsize{10pt}{10pt}\selectfont
-\setlength{\extrarowheight}{3pt}
+	% =============================================================================
+	% CONFIGURACIÓN (basada en tu modelo)
+	% =============================================================================
+	\setlength{\tabcolsep}{1pt}
+	\setlength{\extrarowheight}{3pt}
+	\fontsize{10pt}{10pt}\selectfont
+	
+	% =============================================================================
+	% CÁLCULO DE ANCHOS DE COLUMNAS
+	% =============================================================================
+	% Total de ancho disponible: \linewidth (en landscape es el ancho horizontal)
+	% Restamos el espacio ocupado por líneas verticales y espacios entre columnas
+	% 8 columnas = 7 líneas verticales + espacios entre columnas
+	\newlength{\availablewidth}
+	\setlength{\availablewidth}{\linewidth}
+	\addtolength{\availablewidth}{-6\tabcolsep} % 7 espacios internos * 2
+	\addtolength{\availablewidth}{-0.4pt} % Ancho de líneas verticales
 
-% =============================================================================
-% LONGTABLE CON CAPTION AL PRINCIPIO
-% =============================================================================
-\begin{longtable}{
-  |>{\centering\arraybackslash}m{0.16\linewidth}           % ESPECIE
-  |>{\centering\arraybackslash}m{0.16\linewidth}           % Nº DE CASOS
-  |>{\raggedright\arraybackslash}m{0.36\linewidth}          % CASO/ACTIVIDAD
-  |>{\raggedright\arraybackslash}m{0.30\linewidth}|         % OBSERVACIONES
-}
-
-% ──────────────── CAPTION COMO TÍTULO (solo en primera página) ────────────────
-\caption{Imagenología y Otras Actividades Clínicas}
-\label{tab:otras_actividades}
-\endfirsthead
-
-\caption[]{(Continuación) Imagenología y Otras Actividades Clínicas}
-
-% ──────────────── ENCABEZADO PARA PÁGINAS SIGUIENTES ────────────────
-\hline
-\rowcolor{blue!10}
-\textbf{ESPECIE} & \textbf{Nº DE CASOS} & \textbf{CASO/ACTIVIDAD} & \textbf{OBSERVACIONES} \\
-\hline
-\endhead
-
-% ──────────────── PIE DE PÁGINA (continuación) ────────────────
-\hline
-\multicolumn{4}{r}{\footnotesize\textit{Continúa en la siguiente página \ldots}}
-\endfoot
-
-% ──────────────── PIE FINAL ────────────────
-\hline
-\multicolumn{4}{l}{\footnotesize\textit{\textbf{Fuente}: Elaboración propia.}}
-\endlastfoot
-
-% ──────────────── ENCABEZADO PRIMERA PÁGINA (con color) ────────────────
-\hline
-\rowcolor{blue!10}
-\textbf{ESPECIE} & \textbf{Nº DE CASOS} & \textbf{CASO/ACTIVIDAD} & \textbf{OBSERVACIONES} \\
-\hline
-
-% =============================================================================
-% CONTENIDO DE LA TABLA (extraído del PDF '10_otros.pdf')
-% =============================================================================
-
-\multirow{3}{*}{\textbf{Canino}} & 26 & Rayos X & \\
-\cline{2-4}
-& 7  & Ecografía & \\
-\cline{2-4}
-& 1  & Internación & \\
-\hline
-\textbf{Felino} & 3  & Internación & \\
-\hline
-
-\end{longtable}
+	% =============================================================================
+	% LONGTABLE CON CAPTION AL PRINCIPIO
+	% =============================================================================
+	\begin{longtable}{
+		|>{\centering\arraybackslash}m{0.17\availablewidth}           % ESPECIE
+		|>{\centering\arraybackslash}m{0.165\availablewidth}           % Nº DE CASOS
+		|>{\raggedright\arraybackslash}m{0.36\availablewidth}          % CASO/ACTIVIDAD
+		|>{\raggedright\arraybackslash}m{0.30\availablewidth}|         % OBSERVACIONES
+	}
+	
+		% ──────────────── CAPTION COMO TÍTULO (solo en primera página) ────────────────
+		\caption{\raggedright Imagenología y Otras Actividades Clínicas}
+		\label{tab:otras_actividades} \\
+		\hline
+		\rowcolor{blue!10}
+		\textbf{ESPECIE} & \textbf{Nº DE CASOS} & \textbf{CASO/ACTIVIDAD} & \textbf{OBSERVACIONES} \\
+		\hline
+		\endfirsthead
+		
+		% ──────────────── ENCABEZADO PARA PÁGINAS SIGUIENTES ────────────────
+		\multicolumn{4}{l}{\normalsize\textbf{(Continuación) Cuadro \ref{tab:otras_actividades}}. Imagenología y Otras Actividades Clínicas} \\[6pt]
+		\hline
+		\rowcolor{blue!10}
+		\textbf{ESPECIE} & \textbf{Nº DE CASOS} & \textbf{CASO/ACTIVIDAD} & \textbf{OBSERVACIONES} \\
+		\hline
+		\endhead
+		
+		% ──────────────── PIE DE PÁGINA (continuación) ────────────────
+		\hline
+		\multicolumn{4}{r}{\footnotesize\textit{Continúa en la siguiente página \ldots}}
+		\endfoot
+		
+		% ──────────────── PIE FINAL ────────────────
+		\hline
+		\multicolumn{4}{l}{\footnotesize\textit{\textbf{Fuente}: Elaboración propia.}}
+		\endlastfoot
+		
+		% =============================================================================
+		% CONTENIDO DE LA TABLA (extraído del PDF '10_otros.pdf')
+		% =============================================================================
+		
+		\multirow{3}{*}{\textbf{Canino}} & 26 & Rayos X & \\
+		\cline{2-4}
+		& 7  & Ecografía & \\
+		\cline{2-4}
+		& 1  & Internación & \\
+		\hline
+		\textbf{Felino} & 3  & Internación & \\
+		\hline
+	
+	\end{longtable}
 \end{landscape}
