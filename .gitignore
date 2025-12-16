@@ -18,7 +18,7 @@
 *.bak
 
 # Archivos PDF generados (opcional - si no quieres subir el PDF)
-# *.pdf
+*.pdf
 
 # Archivos específicos del sistema
 .DS_Store
