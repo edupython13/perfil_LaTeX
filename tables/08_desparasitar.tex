@@ -1,31 +1,29 @@
-
-%\subsection*{Cuadro Nº 8: Desparacitaciones}
-%\vspace{0.3cm}
-
-%\caption{Desparasitaciones y aplicación de vitaminas/minerales realizadas}%
-%\label{tab:desparasitaciones}\\
-%\endfirsthead
-
-% 08_desparasitaciones.tex
+% 08_desparasitar.tex
 \begin{landscape}
 
 	% =============================================================================
-	% CONFIGURACIÓN (basada en tu modelo)
+	% CONFIGURACIÓN
 	% =============================================================================
-	\setlength{\tabcolsep}{1pt}
+	\setlength{\tabcolsep}{2pt}
 	\setlength{\extrarowheight}{3pt}
 	\fontsize{10pt}{10pt}\selectfont
 
 	% =============================================================================
 	% CÁLCULO DE ANCHOS DE COLUMNAS
 	% =============================================================================
-	% Total de ancho disponible: \linewidth (en landscape es el ancho horizontal)
-	% Restamos el espacio ocupado por líneas verticales y espacios entre columnas
-	% 8 columnas = 7 líneas verticales + espacios entre columnas
-	%\newlength{\availablewidth}
 	\setlength{\availablewidth}{\linewidth}
-	\addtolength{\availablewidth}{-14\tabcolsep} % 7 espacios internos * 2
-	\addtolength{\availablewidth}{-0.4pt} % Ancho de líneas verticales
+
+	% Restamos (8 columnas * 2 lados) = 16 espacios para un ajuste matemático exacto
+	\addtolength{\availablewidth}{-16\tabcolsep}
+
+	% Restamos el ancho de las líneas verticales (9 líneas * 0.4pt estándar)
+	\addtolength{\availablewidth}{-3.6pt}
+
+	\newcommand{\tableheader}{\rowcolor{blue!10}
+		\textbf{ESPECIE} & \textbf{Nº DE CASOS} & \textbf{PROCEDIMIENTO} & \textbf{FÁRMACO} & 
+		\textbf{PRINCIPIO ACTIVO} & \textbf{DOSIS/VÍA DE AD\-MINISTRACIÓN} & 
+		\textbf{DURA\-CIÓN} & \textbf{OBSERVACIO\-NES} \\
+	}
 
 	% =============================================================================
 	% LONGTABLE CON CAPTION AL PRINCIPIO
@@ -33,32 +31,26 @@
 	\begin{longtable}{
 		|>{\centering\arraybackslash}m{0.08\availablewidth}          % ESPECIE
 		|>{\centering\arraybackslash}m{0.08\availablewidth}           % Nº CASOS
-		|>{\centering\arraybackslash}m{0.16\availablewidth}           % PROCEDIMIENTO
+		|>{\centering\arraybackslash}m{0.17\availablewidth}           % PROCEDIMIENTO
 		|>{\raggedright\arraybackslash}m{0.12\availablewidth}          % FÁRMACO
 		|>{\raggedright\arraybackslash}m{0.20\availablewidth}          % PRINCIPIO ACTIVO
-		|>{\raggedright\arraybackslash}m{0.152\availablewidth}          % DOSIS/VÍA
+		|>{\raggedright\arraybackslash}m{0.16\availablewidth}          % DOSIS/VÍA
 		|>{\centering\arraybackslash}m{0.06\availablewidth}           % DURACIÓN
-		|>{\raggedright\arraybackslash}m{0.14\availablewidth}|         % OBSERVACIONES
+		|>{\raggedright\arraybackslash}m{0.13\availablewidth}|         % OBSERVACIONES
 	}
 
 		% ──────────────── CAPTION COMO TÍTULO (solo en primera página) ────────────────
 		\caption{\raggedright Registro de Desparasitaciones y aplicación de vitaminas realizadas durante el internado}
 		\label{tab:desparasitaciones} \\
 		\hline
-		\rowcolor{blue!10}
-		\textbf{ESPECIE} & \textbf{Nº DE CASOS} & \textbf{PROCEDIMIENTO} & \textbf{FÁRMACO} & 
-		\textbf{PRINCIPIO ACTIVO} & \textbf{DOSIS/VÍA DE ADMINISTRACIÓN} & 
-		\textbf{DURA\-CIÓN} & \textbf{OBSERVACIONES} \\
+		\tableheader
 		\hline
 		\endfirsthead
 		
 		% ──────────────── ENCABEZADO PARA PÁGINAS SIGUIENTES ────────────────
 		\multicolumn{8}{l}{\normalsize\textbf{(Continuación)} Cuadro \ref{tab:desparasitaciones}. Registro de Desparasitaciones y aplicación de vitaminas realizadas durante el internado} \\[6pt]
 		\hline
-		\rowcolor{blue!10}
-		\textbf{ESPECIE} & \textbf{Nº DE CASOS} & \textbf{PROCEDIMIENTO} & \textbf{FÁRMACO} & 
-		\textbf{PRINCIPIO ACTIVO} & \textbf{DOSIS/VÍA DE ADMINISTRACIÓN} & 
-		\textbf{DURA\-CIÓN} & \textbf{OBSERVACIONES} \\
+		\tableheader
 		\hline
 		\endhead
 		
@@ -93,18 +85,22 @@
 		\hline
 		
 		% CANINO – Desparasitación interna-externa
-		\multirow{2}{*}{\textbf{Canino}} & \multirow{2}{*}{58} & \multirow{2}{*}{\parbox{\linewidth}{Desparasitación interna y externa}} &
+		\multirow{2}{*}{\textbf{Canino}} & \multirow{2}{*}{58} & \multirow{2}{=}{Desparasitación interna y externa} &
 		Ranger & Ivermectina 1\% & 1ml/30kg SC & \multirow{2}{*}{3 meses} & \\
 		\cline{4-6}
 		& & & Galerfin & Clorfeniramina maleto & 0,2-2ml IV-IM & & \\
 		\hline
 		
 		% CANINO – Aplicación de vitaminas y minerales
-		\multirow{2}{*}{\textbf{Canino}} & \multirow{2}{*}{125} & \multirow{2}{*}{\parbox{\linewidth}{Aplicación de vitaminas y 	minerales}} &
-		AminoLab Forte & Aminoácidos, dextrosa, cloruro de potasio, cloruro de sodio, cloruro de calcio, acetato de sodio, vitamina B1 B2 	B6 	B12 & 1ml/1kg IV & \multirow{2}{*}{\parbox{\linewidth}{Cada 15 días}} & \\
+		\multirow{2}{*}{\textbf{Canino}} & \multirow{2}{*}{125} & \multirow{2}{=}{Aplicación de vitaminas y minerales} &
+		AminoLab Forte & Aminoácidos, dextrosa, cloruro de potasio, cloruro de sodio, cloruro de calcio, acetato de sodio, vitamina B1 B2 	B6 	B12 & 1ml/1kg IV & \multirow{2}{=}{Cada 15 días} & \\
 		\cline{4-6}
 		& & & Complejo B & Vitamina B1, Vitamina B2, Vitamina B6, Vitamina B12, Vitamina B15 & 1ml/20kg IM-SC & & \\
 		\hline
 
 	\end{longtable}
+	\vspace{-6pt}\normalsize
+	% Resumen conciso de la tabla
+	La tabla registra las desparasitaciones y aplicaciones de vitaminas realizadas en caninos durante el internado en el Hospital para Animales. Se documentaron 258 procedimientos: 8 desparasitaciones externas, 67 internas, 58 combinadas (interna y externa) y 125 aplicaciones de vitaminas y minerales. Los tratamientos incluyen antiparasitarios como Ranger (ivermectina), Levocan (levamisol), Basken (pamoato de pirantel y oxantel), Vermic total (praziquantel, pirantel pamoato, febantel) e Impacto (cipermetrina, clorpirifos, citronelal), antihistamínicos como Galerfin, y vitaminas como AminoLab Forte y Complejo B, administrados por vías oral, subcutánea, intramuscular o intravenosa, con frecuencias de 1 mes, 3 meses o cada 15 días, con resultados satisfactorios en todos los casos.
+
 \end{landscape}

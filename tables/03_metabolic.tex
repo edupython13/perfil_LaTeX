@@ -1,26 +1,29 @@
-% 03_metabolica.tex
+% 03_metabolic.tex
 \begin{landscape}
 
-	%\section*{REGISTRO DE ENFERMEDADES METABÓLICAS}
-	%\vspace{0.3cm}
-
 	% =============================================================================
-	% CONFIGURACIÓN (basada en tu modelo)
+	% CONFIGURACIÓN
 	% =============================================================================
-	\setlength{\tabcolsep}{1pt}
+	\setlength{\tabcolsep}{2pt}
 	\setlength{\extrarowheight}{3pt}
 	\fontsize{10pt}{10pt}\selectfont
-
+	
 	% =============================================================================
 	% CÁLCULO DE ANCHOS DE COLUMNAS
 	% =============================================================================
-	% Total de ancho disponible: \linewidth (en landscape es el ancho horizontal)
-	% Restamos el espacio ocupado por líneas verticales y espacios entre columnas
-	% 8 columnas = 7 líneas verticales + espacios entre columnas
-	%\newlength{\availablewidth}
 	\setlength{\availablewidth}{\linewidth}
-	\addtolength{\availablewidth}{-14\tabcolsep} % 7 espacios internos * 2
-	\addtolength{\availablewidth}{-0.4pt} % Ancho de líneas verticales
+	
+	% Restamos (8 columnas * 2 lados) = 16 espacios para un ajuste matemático exacto
+    \addtolength{\availablewidth}{-16\tabcolsep}
+    
+    % Restamos el ancho de las líneas verticales (9 líneas * 0.4pt estándar)
+    \addtolength{\availablewidth}{-3.6pt}
+
+	\newcommand{\tableheader}{\rowcolor{blue!10}
+		\textbf{ESPE\-CIE} & \textbf{Nº DE CASOS} & \textbf{ENFERMEDA\-DES} & \textbf{FÁRMACO} & 
+		\textbf{PRINCIPIO ACTIVO} & \textbf{DOSIS/VÍA DE ADMINISTRACIÓN} & 
+		\textbf{DURA\-CIÓN} & \textbf{OBSERVA\-CIO\-NES} \\
+	}
 
 	% =============================================================================
 	% LONGTABLE CON CAPTION AL PRINCIPIO
@@ -30,8 +33,8 @@
 		|>{\centering\arraybackslash}m{0.07\availablewidth}           % Nº CASOS
 		|>{\centering\arraybackslash}m{0.14\availablewidth}           % ENFERMEDADES
 		|>{\raggedright\arraybackslash}m{0.12\availablewidth}          % FÁRMACO
-		|>{\raggedright\arraybackslash}m{0.26\availablewidth}          % PRINCIPIO ACTIVO
-		|>{\raggedright\arraybackslash}m{0.152\availablewidth}          % DOSIS/VÍA
+		|>{\raggedright\arraybackslash}m{0.25\availablewidth}          % PRINCIPIO ACTIVO
+		|>{\raggedright\arraybackslash}m{0.17\availablewidth}          % DOSIS/VÍA
 		|>{\centering\arraybackslash}m{0.06\availablewidth}            % TIEMPO
 		|>{\raggedright\arraybackslash}m{0.12\availablewidth}|         % OBSERVACIONES
 	}
@@ -40,20 +43,14 @@
 		\caption{\raggedright Registro de Tratamientos para Enfermedades Metabólicas}
 		\label{tab:metabolicas} \\
 		\hline
-		\rowcolor{blue!10}
-		\textbf{ESPECIE} & \textbf{Nº DE CASOS} & \textbf{ENFERMEDADES} & \textbf{FÁRMACO} & 
-		\textbf{PRINCIPIO ACTIVO} & \textbf{DOSIS/VÍA DE ADMINISTRACIÓN} & 
-		\textbf{DURA\-CIÓN} & \textbf{OBSERVACIO\-NES} \\
+		\tableheader
 		\hline
 		\endfirsthead
 
 		% ──────────────── ENCABEZADO PARA PÁGINAS SIGUIENTES ────────────────
 		\multicolumn{8}{l}{\normalsize\textbf{(Continuación) Cuadro \ref{tab:metabolicas}}. Registro de Tratamientos para Enfermedades Metabólicas} \\[6pt]
 		\hline
-		\rowcolor{blue!10}
-		\textbf{ESPECIE} & \textbf{Nº DE CASOS} & \textbf{ENFERMEDADES} & \textbf{FÁRMACO} & 
-		\textbf{PRINCIPIO ACTIVO} & \textbf{DOSIS/VÍA DE ADMINISTRACIÓN} & 
-		\textbf{DURA\-CIÓN} & \textbf{OBSERVACIO\-NES} \\
+		\tableheader
 		\hline
 		\endhead
 
@@ -103,4 +100,8 @@
 		\hline
 
 	\end{longtable}
+	\vspace{-6pt}\normalsize
+	% Resumen conciso de la tabla
+	La tabla registra los tratamientos aplicados para enfermedades metabólicas en animales durante el internado. Se documentaron 6 casos: 3 de ascitis en caninos y 3 de anemia (2 en caninos y 1 en felino). Los tratamientos incluyen diuréticos como Furozur, antibióticos como Cefotaxima, fluidoterapia con Ringer Lactato, aminoácidos y vitaminas del complejo B, y suplementos de hierro como Duplafer, administrados por vías intravenosa, intramuscular o subcutánea durante 3-5 días, con resultados satisfactorios en todos los casos.
+
 \end{landscape}

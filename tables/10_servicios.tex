@@ -1,76 +1,79 @@
-%\subsection*{Cuadro Nº 10: Imagenología y otros servicios}
-%\vspace{0.3cm}
+% 10_servicios.tex
+\begin{center}
 
-% 10_otros.tex
-\begin{landscape}
+    % =============================================================================
+    % CONFIGURACIÓN GENERAL
+    % =============================================================================
+    \setlength{\tabcolsep}{2pt}
+    \setlength{\extrarowheight}{3pt}
+    \fontsize{10pt}{10pt}\selectfont
 
-	% =============================================================================
-	% CONFIGURACIÓN (basada en tu modelo)
-	% =============================================================================
-	\setlength{\tabcolsep}{1pt}
-	\setlength{\extrarowheight}{3pt}
-	\fontsize{10pt}{10pt}\selectfont
-	
-	% =============================================================================
-	% CÁLCULO DE ANCHOS DE COLUMNAS
-	% =============================================================================
-	% Total de ancho disponible: \linewidth (en landscape es el ancho horizontal)
-	% Restamos el espacio ocupado por líneas verticales y espacios entre columnas
-	% 8 columnas = 7 líneas verticales + espacios entre columnas
-	%\newlength{\availablewidth}
-	\setlength{\availablewidth}{\linewidth}
-	\addtolength{\availablewidth}{-6\tabcolsep} % 7 espacios internos * 2
-	\addtolength{\availablewidth}{-0.4pt} % Ancho de líneas verticales
+    % =============================================================================
+    % CÁLCULO DE ANCHOS DE COLUMNAS
+    % =============================================================================
+    \setlength{\availablewidth}{\linewidth}
+    % Subtract padding for 4 columns (each has left and right tabcolsep: 4 * 2 * tabcolsep)
+    \addtolength{\availablewidth}{-8\tabcolsep}
+    % Subtract width of vertical lines (5 lines * 0.4pt each ≈ 2pt)
+    \addtolength{\availablewidth}{-2pt}
 
-	% =============================================================================
-	% LONGTABLE CON CAPTION AL PRINCIPIO
-	% =============================================================================
-	\begin{longtable}{
-		|>{\centering\arraybackslash}m{0.17\availablewidth}           % ESPECIE
-		|>{\centering\arraybackslash}m{0.165\availablewidth}           % Nº DE CASOS
-		|>{\raggedright\arraybackslash}m{0.36\availablewidth}          % CASO/ACTIVIDAD
-		|>{\raggedright\arraybackslash}m{0.30\availablewidth}|         % OBSERVACIONES
-	}
-	
-		% ──────────────── CAPTION COMO TÍTULO (solo en primera página) ────────────────
-		\caption{\raggedright Imagenología y Otras Actividades Clínicas}
-		\label{tab:otras_actividades} \\
-		\hline
-		\rowcolor{blue!10}
-		\textbf{ESPECIE} & \textbf{Nº DE CASOS} & \textbf{CASO/ACTIVIDAD} & \textbf{OBSERVACIONES} \\
-		\hline
-		\endfirsthead
-		
-		% ──────────────── ENCABEZADO PARA PÁGINAS SIGUIENTES ────────────────
-		\multicolumn{4}{l}{\normalsize\textbf{(Continuación) Cuadro \ref{tab:otras_actividades}}. Imagenología y Otras Actividades Clínicas} \\[6pt]
-		\hline
-		\rowcolor{blue!10}
-		\textbf{ESPECIE} & \textbf{Nº DE CASOS} & \textbf{CASO/ACTIVIDAD} & \textbf{OBSERVACIONES} \\
-		\hline
-		\endhead
-		
-		% ──────────────── PIE DE PÁGINA (continuación) ────────────────
-		\hline
-		\multicolumn{4}{r}{\footnotesize\textit{Continúa en la siguiente página \ldots}}
-		\endfoot
-		
-		% ──────────────── PIE FINAL ────────────────
-		\hline
-		\multicolumn{4}{l}{\footnotesize\textit{\textbf{Fuente}: Elaboración propia.}}
-		\endlastfoot
-		
-		% =============================================================================
-		% CONTENIDO DE LA TABLA (extraído del PDF '10_otros.pdf')
-		% =============================================================================
-		
-		\multirow{3}{*}{\textbf{Canino}} & 26 & Rayos X & \\
-		\cline{2-4}
-		& 7  & Ecografía & \\
-		\cline{2-4}
-		& 1  & Internación & \\
-		\hline
-		\textbf{Felino} & 3  & Internación & \\
-		\hline
-	
-	\end{longtable}
-\end{landscape}
+    % Define table header macro for reusability
+    \newcommand{\tableheader}{%
+        \rowcolor{blue!10}%
+        \textbf{ESPECIE} & \textbf{Nº DE CASOS} & \textbf{CASO/ACTIVIDAD} & \textbf{OBSERVACIONES} \\
+    }
+
+    % =============================================================================
+    % LONGTABLE DEFINITION
+    % =============================================================================
+    \begin{longtable}{
+        |C{0.17\availablewidth}    % ESPECIE (centered)
+        |C{0.17\availablewidth}    % Nº DE CASOS (centered)
+        |L{0.36\availablewidth}    % CASO/ACTIVIDAD (left-aligned)
+        |L{0.30\availablewidth}|   % OBSERVACIONES (left-aligned)
+    }
+
+        % Caption for first page
+        \caption{\raggedright Imagenología y Otras Actividades Clínicas}
+        \label{tab:otras_actividades} \\
+        \hline
+        \tableheader
+        \hline
+        \endfirsthead
+
+        % Header for subsequent pages
+        \multicolumn{4}{l}{\normalsize\textbf{(Continuación) Cuadro \ref{tab:otras_actividades}}. Imagenología y Otras Actividades Clínicas} \\[6pt]
+        \hline
+        \tableheader
+        \hline
+        \endhead
+
+        % Footer for continuing pages
+        \hline
+        \multicolumn{4}{r}{\footnotesize\textit{Continúa en la siguiente página \ldots}}
+        \endfoot
+
+        % Final footer
+        \hline
+        \multicolumn{4}{l}{\footnotesize\textit{\textbf{Fuente}: Elaboración propia.}}
+        \endlastfoot
+
+        % =============================================================================
+        % TABLE CONTENT (extracted from PDF '10_otros.pdf')
+        % =============================================================================
+
+        \multirow{3}{*}{\textbf{Canino}} & 26 & Rayos X & \\
+        \cline{2-4}
+        & 7 & Ecografía & \\
+        \cline{2-4}
+        & 1 & Internación & \\
+        \hline
+        \textbf{Felino} & 3 & Internación & \\
+        \hline
+      
+       \end{longtable}
+\end{center}
+
+\vspace{-1cm}
+% Resumen conciso de la tabla
+La tabla registra las actividades de imagenología y otras clínicas realizadas durante el internado en el Hospital para Animales. Se documentaron 26 rayos X, 7 ecografías y 1 internación en caninos, y 3 internaciones en felinos.

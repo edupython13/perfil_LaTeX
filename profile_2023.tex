@@ -1,71 +1,80 @@
 \documentclass[12pt,letterpaper,oneside,final]{article}
-%\raggedbottom
-%\flushbottom
+
+% Input settings file for document configuration
 \input{settings}
+
 \begin{document}
-	%\sloppy
-	%\selectbiblanguage{spanish}
-	%\onehalfspacing
-	% ------------------------------------
-	% Cover
-	\include{frontmatter/00_cover}
-	% ------------------------------------
-	% Asesor
-	\include{frontmatter/01_asesor}
-	% ------------------------------------
-	% Tribunal
-	\include{frontmatter/02_tribunal}
-	% ------------------------------------
-	% Dedicatoria
-	\include{frontmatter/03_dedication}
-	% ------------------------------------
-	% Agradecimientos
-	\include{frontmatter/04_thanks}
-	% ------------------------------------
-	% Resumen
-	\include{frontmatter/05_summary}
-	% ------------------------------------
-	% Índice o contenido
-	\input{references/contents}
-	% ------------------------------------
-	% Antecedentes
-	\include{chapters/01_intro}
-	% ------------------------------------
-	% Antecedentes
-	\include{chapters/02_justif}
-	% ------------------------------------
-	% Objetivos
-	\include{chapters/03_objetivo}
-	% ------------------------------------
-	% Marco teórico
-	\include{chapters/04_marco_teo}
-	% ------------------------------------
-	% Marco contextual
-	\include{chapters/05_marco_con}
-	% ------------------------------------
-	% Métodos
-	\include{chapters/06_metodos}
-	% ------------------------------------
-	% Materiales
-	\include{chapters/07_materiales}
-	% ------------------------------------
-	% Resultados
-	\include{chapters/08_results}
-	% ------------------------------------
-	% Discusión
-	\include{chapters/09_discussion}
-	% ------------------------------------
-	% Conclusión
-	\include{chapters/10_conclusions}
-	% ------------------------------------
-	% Recomendaciones
-	\include{chapters/11_recommendations}
-	% ------------------------------------
-	% Bibliografía
-	\input{references/bibliography}
-	% ------------------------------------
-	% Anexos
-	\input{references/anexos}
-	% ------------------------------------
-	\clearpage
+
+    % Front Matter Section
+    % --------------------
+
+    % Cover page
+    \include{frontmatter/00_cover}
+
+    % Advisor
+    \include{frontmatter/01_asesor}
+
+    % Tribunal
+    \include{frontmatter/02_tribunal}
+
+    % Dedication
+    \include{frontmatter/03_dedication}
+
+    % Acknowledgments
+    \include{frontmatter/04_thanks}
+
+    % Summary
+    \include{frontmatter/05_summary}
+
+    % Table of Contents
+    \input{references/contents}
+
+    % Main Chapters
+    % -------------
+
+    % Introduction
+    \include{chapters/01_intro}
+
+    % Justification
+    \include{chapters/02_justif}
+
+    % Objectives
+    \include{chapters/03_objetivo}
+
+    % Theoretical Framework
+    \include{chapters/04_marco_teo}
+
+    % Contextual Framework
+    \include{chapters/05_marco_con}
+
+    % Methods
+    \include{chapters/06_metodos}
+
+    % Materials
+    \include{chapters/07_materiales}
+
+    % Results
+    \include{chapters/08_results}
+
+    % Discussion
+    \include{chapters/09_discussion}
+
+    % Conclusions
+    \include{chapters/10_conclusions}
+
+    % Recommendations
+    \include{chapters/11_recommendations}
+
+    % References Section
+    % ------------------
+
+    % Bibliography
+    \input{references/bibliography}
+
+    % Appendices
+    \input{references/anexos}
+
+    % Ensure a new page before end
+    \clearpage
+
 \end{document}

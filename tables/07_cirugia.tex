@@ -1,27 +1,29 @@
+% 07_cirugia.tex
 \begin{landscape}
 
-	%\subsection*{Cuadro Nº 7: Cirugías}
-	%\vspace{0.3cm}
 	% =============================================================================
-	% CONFIGURACIÓN TIPOGRÁFICA (NO TOCAR – FUNCIONA PERFECTAMENTE)
+	% CONFIGURACIÓN
 	% =============================================================================
-	%\fontsize{10pt}{15pt}\selectfont
-	%\setlength{\extrarowheight}{2pt}
-	%\setlength{\tabcolsep}{3pt}
-	\setlength{\tabcolsep}{1pt}
+	\setlength{\tabcolsep}{2pt}
 	\setlength{\extrarowheight}{3pt}
 	\fontsize{10pt}{10pt}\selectfont
 
 	% =============================================================================
 	% CÁLCULO DE ANCHOS DE COLUMNAS
 	% =============================================================================
-	% Total de ancho disponible: \linewidth (en landscape es el ancho horizontal)
-	% Restamos el espacio ocupado por líneas verticales y espacios entre columnas
-	% 8 columnas = 7 líneas verticales + espacios entre columnas
-	%\newlength{\availablewidth}
 	\setlength{\availablewidth}{\linewidth}
-	\addtolength{\availablewidth}{-14\tabcolsep} % 7 espacios internos * 2
-	\addtolength{\availablewidth}{-0.4pt} % Ancho de líneas verticales
+
+	% Restamos (8 columnas * 2 lados) = 16 espacios para un ajuste matemático exacto
+	\addtolength{\availablewidth}{-16\tabcolsep}
+
+	% Restamos el ancho de las líneas verticales (9 líneas * 0.4pt estándar)
+	\addtolength{\availablewidth}{-3.6pt}
+
+	\newcommand{\tableheader}{\rowcolor{blue!10}
+		\textbf{ESPECIE} & \textbf{Nº DE CASOS} & \textbf{CIRUGÍA} &
+		\textbf{FÁRMACO} & \textbf{PRINCIPIO ACTIVO} & \textbf{DOSIS} &
+		\textbf{VÍA DE ADMINISTRACIÓN} & \textbf{OBSERVACIO\-NES} \\
+	}
 
 	% =============================================================================
 	% TABLA
@@ -32,9 +34,9 @@
 		|>{\centering\arraybackslash}m{0.10\availablewidth}    %Cirugia
 		|>{\raggedright\arraybackslash}m{0.16\availablewidth}  %Farmaco
 		|>{\raggedright\arraybackslash}m{0.22\availablewidth}  %Principio
-		|>{\raggedright\arraybackslash}m{0.12\availablewidth}  %Dosis
+		|>{\raggedright\arraybackslash}m{0.13\availablewidth}  %Dosis
 		|>{\raggedright\arraybackslash}m{0.12\availablewidth}  %Via
-		|>{\raggedright\arraybackslash}m{0.122\availablewidth}| %Observaciones
+		|>{\raggedright\arraybackslash}m{0.12\availablewidth}| %Observaciones
 	}
 
 		% -----------------------------------------------------------------------------
@@ -43,10 +45,7 @@
 		\caption{\raggedright Registro de Cirugías realizadas durante el periodo de internado}
 		\label{tab:cirugias} \\
 		\hline
-		\rowcolor{blue!10}
-		\textbf{ESPECIE} & \textbf{Nº DE CASOS} & \textbf{CIRUGÍA} &
-		\textbf{FÁRMACO} & \textbf{PRINCIPIO ACTIVO} & \textbf{DOSIS} &
-		\textbf{VÍA DE ADMINISTRACIÓN} & \textbf{OBSERVACIO\-NES} \\
+		\tableheader
 		\hline
 		\endfirsthead
 
@@ -55,10 +54,7 @@
 		% -----------------------------------------------------------------------------
 		\multicolumn{8}{l}{\normalsize\textbf{(Continuación) Cuadro \ref{tab:cirugias}}. Registro de Cirugías realizadas durante el periodo de internado} \\[6pt]
 		\hline
-		\rowcolor{blue!10}
-		\textbf{ESPECIE} & \textbf{Nº DE CASOS} & \textbf{CIRUGÍA} &
-		\textbf{FÁRMACO} & \textbf{PRINCIPIO ACTIVO} & \textbf{DOSIS} &
-		\textbf{VÍA DE ADMINISTRACIÓN} & \textbf{OBSERVACIO\-NES} \\
+		\tableheader
 		\hline
 		\endhead
 
@@ -202,4 +198,8 @@
 		\hline
 
 	\end{longtable}
+	\vspace{-6pt}\normalsize
+	% Resumen conciso de la tabla
+	La tabla registra las cirugías realizadas durante el internado en el Hospital para Animales. Se documentaron 33 procedimientos: 3 orquiectomías y 7 OVH en caninos, y 9 orquiectomías y 14 OVH en felinos. Los protocolos quirúrgicos incluyen anestesia con Xilacina, Lidocaína y Keta-A, antibióticos como Cefavet, tratamientos tópicos como Galmetrim plus y Yodo podovidona, suturas con Ácido poliglicólico y Hilo externo. En las OVH, se agregó soporte con analgésicos como Desalgina, Atropina, fluidoterapia con Ringer Lactato, protectores hepáticos como Mercepton y vitaminas, con resultados satisfactorios en todos los casos.
+
 \end{landscape}

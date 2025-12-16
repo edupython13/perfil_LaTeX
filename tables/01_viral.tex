@@ -4,9 +4,9 @@
 	Los resultados se ven reflejados en los cuadros durante los 6 meses de internado en el Hospital para Animales de la Facultad Integral Defensores del Chaco.
 
 	% =============================================================================
-	% CONFIGURACIÓN (basada en tu modelo)
+	% CONFIGURACIÓN
 	% =============================================================================
-	\setlength{\tabcolsep}{1pt}
+	\setlength{\tabcolsep}{2pt}
 	\setlength{\extrarowheight}{3pt}
 	\fontsize{10pt}{10pt}\selectfont
 	%\footnotesize
@@ -14,13 +14,20 @@
 	% =============================================================================
 	% CÁLCULO DE ANCHOS DE COLUMNAS
 	% =============================================================================
-	% Total de ancho disponible: \linewidth (en landscape es el ancho horizontal)
-	% Restamos el espacio ocupado por líneas verticales y espacios entre columnas
-	% 8 columnas = 7 líneas verticales + espacios entre columnas
-	%\newlength{\availablewidth}
 	\setlength{\availablewidth}{\linewidth}
-	\addtolength{\availablewidth}{-14\tabcolsep} % 7 espacios internos * 2
-	\addtolength{\availablewidth}{-0.4pt} % Ancho de líneas verticales
+	
+	% Restamos (8 columnas * 2 lados) = 16 espacios para un ajuste matemático exacto
+    \addtolength{\availablewidth}{-16\tabcolsep}
+    
+    % Restamos el ancho de las líneas verticales (9 líneas * 0.4pt estándar)
+    \addtolength{\availablewidth}{-3.6pt}
+
+	% Macro for table header to improve maintainability
+	\newcommand{\tableheader}{\rowcolor{blue!10}
+		\textbf{ESPE\-CIE} & \textbf{Nº DE CASOS} & \textbf{ENFERMEDAD} & \textbf{FÁRMACO} &
+		\textbf{PRINCIPIO ACTIVO} & \textbf{DOSIS/VÍA DE ADMINISTRACIÓN} &
+		\textbf{DURA\-CIÓN} & \textbf{OBSERVACIO\-NES} \\
+	}
 
 	% =============================================================================
 	% LONGTABLE CON CAPTION AL PRINCIPIO
@@ -30,20 +37,17 @@
 		|>{\centering\arraybackslash}m{0.07\availablewidth}           % Nº CASOS
 		|>{\centering\arraybackslash}m{0.12\availablewidth}           % ENFERMEDADES
 		|>{\raggedright\arraybackslash}m{0.12\availablewidth}          % FÁRMACO
-		|>{\raggedright\arraybackslash}m{0.24\availablewidth}          % PRINCIPIO ACTIVO
-		|>{\raggedright\arraybackslash}m{0.152\availablewidth}          % DOSIS/VÍA
+		|>{\justifying\arraybackslash}m{0.245\availablewidth}          % PRINCIPIO ACTIVO
+		|>{\raggedright\arraybackslash}m{0.185\availablewidth}          % DOSIS/VÍA
 		|>{\centering\arraybackslash}m{0.06\availablewidth}            % TIEMPO
-		|>{\raggedright\arraybackslash}m{0.15\availablewidth}|         % OBSERVACIONES
+		|>{\raggedright\arraybackslash}m{0.12\availablewidth}|         % OBSERVACIONES
 	}
 
 		% ──────────────── ENCABEZADO Y CAPTION DE LA PRIMERA PÁGINA ────────────────
 		\caption{\raggedright Registro de Tratamientos para Enfermedades Virales}
 		\label{tab:virales} \\
 		\hline
-		\rowcolor{blue!10}
-		\textbf{ESPECIE} & \textbf{Nº DE CASOS} & \textbf{ENFERMEDAD} & \textbf{FÁRMACO} & 
-		\textbf{PRINCIPIO ACTIVO} & \textbf{DOSIS/VÍA DE ADMINISTRACIÓN} & 
-		\textbf{DURA\-CIÓN} & \textbf{OBSERVACIONES} \\
+		\tableheader
 		\hline
 		\endfirsthead
 		
@@ -51,10 +55,7 @@
 		% Se usa \multicolumn para el título de continuación
 		\multicolumn{8}{l}{\normalsize\textbf{(Continuación) Cuadro \ref{tab:virales}}. Registro de Tratamientos para Enfermedades Virales} \\[6pt]
 		\hline
-		\rowcolor{blue!10}
-		\textbf{ESPECIE} & \textbf{Nº DE CASOS} & \textbf{ENFERMEDAD} & \textbf{FÁRMACO} & 
-		\textbf{PRINCIPIO ACTIVO} & \textbf{DOSIS/VÍA DE ADMINISTRACIÓN} & 
-		\textbf{DURA\-CIÓN} & \textbf{OBSERVACIONES} \\
+		\tableheader
 		\hline
 		\endhead
 
@@ -74,7 +75,7 @@
 
 		% Canino – Parvo virus
 		\multirow{7}{*}{\textbf{Canino}} & \multirow{7}{*}{14} & \multirow{7}{*}{Parvo virus} &
-		Ringer Lactato & Electrolitos & Según criterio medico IV & \multirow{7}{*}{3-5 días} & \multirow{7}{=}{\parbox{\linewidth}{2 pacientes no respondieron al tratamiento}} \\
+		Ringer Lactato & Electrolitos & Según criterio medico IV & \multirow{7}{*}{3-5 días} & \multirow{7}{=}{2 pacientes no respondieron al tratamiento} \\
 		\cline{4-6}
 		& & & Ditral & Sulfadoxina, trimetoprima & 1ml/10kg IV-IM & & \\
 		\cline{4-6}
@@ -91,7 +92,7 @@
 
 		% Canino – Distemper
 		\multirow{6}{*}{\textbf{Canino}} & \multirow{6}{*}{5} & \multirow{6}{*}{Distemper} &
-		Ringer Lactato & Electrolitos & Según criterio médico IV & \multirow{6}{*}{3-5 días} & \multirow{6}{=}{\parbox{\linewidth}{1 paciente no respondió al tratamiento}} \\
+		Ringer Lactato & Electrolitos & Según criterio médico IV & \multirow{6}{*}{3-5 días} & \multirow{6}{=}{1 paciente no respondió al tratamiento} \\
 		\cline{4-6}
 		& & & Desalgina & Dipirona & 1ml/10kg IV-IM-SC & & \\
 		\cline{4-6}
@@ -122,4 +123,8 @@
 		& & & Ditral & Sulfadoxina, trimetoprima & 1ml/10kg IV-IM & & \\
 		\hline
 	\end{longtable}
+	\vspace{-6pt}\normalsize
+	% Resumen conciso de la tabla
+	La tabla registra los tratamientos aplicados para enfermedades virales en animales durante el internado en el Hospital para Animales de la Facultad Integral Defensores del Chaco. Se documentaron 27 casos en caninos (14 de parvovirus, 5 de distemper y 7 de hepatitis) y 1 caso en felino (panleucopenia). Los tratamientos incluyen fluidoterapia con Ringer Lactato, antibióticos como Ditral y Clortetrasone, analgésicos como Desalgina, vitaminas del complejo B y otros fármacos, administrados por vías intravenosa, intramuscular o subcutánea durante 3-5 días. En general, los resultados fueron satisfactorios, aunque algunos pacientes no respondieron al tratamiento.
+
 \end{landscape}

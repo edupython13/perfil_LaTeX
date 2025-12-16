@@ -1,26 +1,29 @@
-% 06_tramatismo.tex
+% 06_trauma.tex
 \begin{landscape}
 
-	%\section*{REGISTRO DE TRAUMATISMOS}
-	%\vspace{0.3cm}
-
 	% =============================================================================
-	% CONFIGURACIÓN (basada en tu modelo)
+	% CONFIGURACIÓN
 	% =============================================================================
-	\setlength{\tabcolsep}{1pt}
+	\setlength{\tabcolsep}{2pt}
 	\setlength{\extrarowheight}{3pt}
 	\fontsize{10pt}{10pt}\selectfont
 
 	% =============================================================================
 	% CÁLCULO DE ANCHOS DE COLUMNAS
 	% =============================================================================
-	% Total de ancho disponible: \linewidth (en landscape es el ancho horizontal)
-	% Restamos el espacio ocupado por líneas verticales y espacios entre columnas
-	% 8 columnas = 7 líneas verticales + espacios entre columnas
-	%\newlength{\availablewidth}
 	\setlength{\availablewidth}{\linewidth}
-	\addtolength{\availablewidth}{-14\tabcolsep} % 7 espacios internos * 2
-	\addtolength{\availablewidth}{-0.4pt} % Ancho de líneas verticales
+
+	% Restamos (8 columnas * 2 lados) = 16 espacios para un ajuste matemático exacto
+	\addtolength{\availablewidth}{-16\tabcolsep}
+
+	% Restamos el ancho de las líneas verticales (9 líneas * 0.4pt estándar)
+	\addtolength{\availablewidth}{-3.6pt}
+
+	\newcommand{\tableheader}{\rowcolor{blue!10}
+		\textbf{ESPECIE} & \textbf{Nº DE CASOS} & \textbf{ENFERMEDADES} & \textbf{FÁRMACO} & 
+		\textbf{PRINCIPIO ACTIVO} & \textbf{DOSIS/VÍA DE ADMINISTRACIÓN} & 
+		\textbf{DURA\-CIÓN} & \textbf{OBSERVACIO\-NES} \\
+	}
 
 	% =============================================================================
 	% LONGTABLE CON CAPTION AL PRINCIPIO
@@ -31,7 +34,7 @@
 		|>{\centering\arraybackslash}m{0.14\availablewidth}           % ENFERMEDADES
 		|>{\raggedright\arraybackslash}m{0.12\availablewidth}          % FÁRMACO
 		|>{\raggedright\arraybackslash}m{0.24\availablewidth}          % PRINCIPIO ACTIVO
-		|>{\raggedright\arraybackslash}m{0.152\availablewidth}          % DOSIS/VÍA
+		|>{\raggedright\arraybackslash}m{0.16\availablewidth}          % DOSIS/VÍA
 		|>{\centering\arraybackslash}m{0.07\availablewidth}            % TIEMPO
 		|>{\raggedright\arraybackslash}m{0.12\availablewidth}|         % OBSERVACIONES
 	}
@@ -40,20 +43,14 @@
 		\caption{\raggedright Registro de Tratamientos para Traumatismos}
 		\label{tab:traumatismos} \\
 		\hline
-		\rowcolor{blue!10}
-		\textbf{ESPECIE} & \textbf{Nº DE CASOS} & \textbf{ENFERMEDADES} & \textbf{FÁRMACO} & 
-		\textbf{PRINCIPIO ACTIVO} & \textbf{DOSIS/VÍA DE ADMINISTRACIÓN} & 
-		\textbf{DURA\-CIÓN} & \textbf{OBSERVACIO\-NES} \\
+		\tableheader
 		\hline
 		\endfirsthead
 
 		% ──────────────── ENCABEZADO PARA PÁGINAS SIGUIENTES ────────────────
 		\multicolumn{8}{l}{\normalsize\textbf{(Continuación) Cuadro \ref{tab:traumatismos}}. Registro de Tratamientos para Traumatismos} \\[6pt]
 		\hline
-		\rowcolor{blue!10}
-		\textbf{ESPECIE} & \textbf{Nº DE CASOS} & \textbf{ENFERMEDADES} & \textbf{FÁRMACO} & 
-		\textbf{PRINCIPIO ACTIVO} & \textbf{DOSIS/VÍA DE ADMINISTRACIÓN} & 
-		\textbf{DURA\-CIÓN} & \textbf{OBSERVACIO\-NES} \\
+		\tableheader
 		\hline
 		\endhead
 
@@ -72,8 +69,8 @@
 		% =============================================================================
 
 		% Canino – Traumatismo (fractura)
-		\multirow{7}{*}{\textbf{Canino}} & \multirow{7}{*}{4} & \multirow{7}{*}{\parbox{\linewidth}{\centering{Traumatismo\\(fractura)}}} &
-		Xilacina & Xilacina & 1ml/20kg IV-IM & \multirow{7}{*}{\parbox{\linewidth}{3-4 semanas}} &  \\
+		\multirow{7}{*}{\textbf{Canino}} & \multirow{7}{*}{4} & \multirow{7}{=}{\centering{Traumatismo (fractura)}} &
+		Xilacina & Xilacina & 1ml/20kg IV-IM & \multirow{7}{=}{3-4 semanas} &  \\
 		\cline{4-6}
 		& & & Lidocaina & Lidocaina & Según criterio médico & & \\
 		\cline{4-6}
@@ -111,4 +108,8 @@
 		\hline
 
 	\end{longtable}
+	\vspace{-6pt}\normalsize
+	% Resumen conciso de la tabla
+	La tabla registra los tratamientos aplicados para traumatismos en caninos y felinos durante el internado. Se documentaron 30 casos: 4 de fracturas, 24 de politraumatismo en caninos y 2 de contusiones en felinos. Los tratamientos incluyen sedantes como Xilacina, anestésicos como Lidocaina, antibióticos como Oximed, analgésicos como Desalgina y Diclofenaco, antiinflamatorios como Ankofen, vitaminas del complejo B y antisépticos tópicos como Yodo podovidona, administrados por vías intravenosa, intramuscular, subcutánea o tópica durante 3-5 días o 3-4 semanas según la gravedad, con resultados satisfactorios en todos los casos.
+
 \end{landscape}

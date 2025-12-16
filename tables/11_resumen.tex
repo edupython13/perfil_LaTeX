@@ -1,53 +1,47 @@
+% 11_resumen.tex
 \begin{landscape}
-	%\subsection{Análisis Global}
-	%subsubsection{Cuadro Nº 12: Análisis Global de las Actividades}
 	
-	%Esta consolidación refleja la aplicación práctica de los conocimientos adquiridos durante el internado, abarcando desde la medicina 	preventiva (Inmunizaciones, Desparasitaciones) y las habilidades técnicas (Cirugías) hasta el manejo de patologías específicas 	(Tratamientos).
+	\setlength{\tabcolsep}{2pt}
+	\setlength{\extrarowheight}{3pt}
 	
-	%\paragraph{Resumen Global de Casuística por Tipo de Intervención}
-	%\centering
-	\setlength{\tabcolsep}{3pt}
-	%\fontsize{10pt}{12pt}\selectfont
-	\renewcommand{\arraystretch}{1.5}
-	\normalsize
+	%\renewcommand{\arraystretch}{1.5}
+	\fontsize{10pt}{12pt}\selectfont
 	%\definecolor{azulclinica}{RGB}{230, 240, 255}
-	
-	%\setlength{\tabcolsep}{5pt}
-	%\fontsize{12pt}{15pt}\selectfont
-	%\setlength{\extrarowheight}{3pt}
 	
 	% =============================================================================
 	% CÁLCULO DE ANCHOS DE COLUMNAS
 	% =============================================================================
-	% Total de ancho disponible: \linewidth (en landscape es el ancho horizontal)
-	% Restamos el espacio ocupado por líneas verticales y espacios entre columnas
-	% 8 columnas = 7 líneas verticales + espacios entre columnas
-	%\newlength{\availablewidth}
 	\setlength{\availablewidth}{\linewidth}
-	\addtolength{\availablewidth}{-6\tabcolsep} % 7 espacios internos * 2
-	\addtolength{\availablewidth}{-0.4pt} % Ancho de líneas verticales
+	
+	% Restamos (4 columnas * 2 lados) = 8 espacios para un ajuste matemático exacto
+    \addtolength{\availablewidth}{-8\tabcolsep}
+    
+    % Restamos el ancho de las líneas verticales (5 líneas * 0.4pt estándar)
+    \addtolength{\availablewidth}{-2pt}
+
+	\newcommand{\tableheader}{\rowcolor{blue!10}
+		\textbf{CATEGORÍAS} & \textbf{DETALLE DE ACTIVIDADES AGRUPADAS} & \textbf{TOTAL CASOS} & \textbf{PORCENTAJE (\%)} \\
+	}
 	
 	\begin{longtable}{
-		|>{\raggedright\arraybackslash}m{0.22\availablewidth}	%Categoria
-		|>{\raggedright\arraybackslash}m{0.438\availablewidth}	%Detalle
-		|>{\centering\arraybackslash}m{0.15\availablewidth}		%Casos
-		|>{\centering\arraybackslash}m{0.18\availablewidth}|		%Porcentaje
+		|>{\centering\arraybackslash}m{0.22\availablewidth}	%Categoria
+		|>{\raggedright\arraybackslash}m{0.45\availablewidth}	%Detalle
+		|>{\raggedleft\arraybackslash}m{0.15\availablewidth}		%Casos
+		|>{\raggedleft\arraybackslash}m{0.18\availablewidth}|		%Porcentaje
 	}
 	
 		% ──────────────── CAPTION COMO TÍTULO (solo en primera página) ────────────────
 		\caption{\raggedright Resumen de actividades veterinarias realizadas durante el internado}
 		\label{tab:actividades_veterinarias} \\
 		\hline
-		\rowcolor{blue!10}
-		\textbf{Categorías} & \textbf{Detalle de Actividades Agrupadas} & \textbf{Total Casos} & \textbf{Porcentaje (\%)} \\
+		\tableheader
 		\hline
 		\endfirsthead
 	
 		% ──────────────── ENCABEZADO PARA PÁGINAS SIGUIENTES ────────────────
 		\multicolumn{4}{l}{\normalsize\textbf{(Continuación) Cuadro \ref{tab:actividades_veterinarias}}. Resumen de actividades veterinarias realizadas durante el internado} \\[6pt]
 		\hline
-		\rowcolor{blue!10}
-		\textbf{Categorías} & \textbf{Detalle de Actividades Agrupadas} & \textbf{Total Casos} & \textbf{Porcentaje (\%)} \\
+		\tableheader
 		\hline
 		\endhead
 	
@@ -62,9 +56,9 @@
 		\endlastfoot
 	
 		% =============================================================================
-		% CONTENIDO DE LA TABLA 
+		% CONTENIDO DE LA TABLA
 		% =============================================================================
-		\textbf{Tratamientos} & Enfermedades Bacterianas, Virales, Parasitarias, Metabólicas, Traumatismos, Intoxicaciones, Vitaminas/	Minerales. & 288 & 45.71\% \\
+		\textbf{Tratamientos} & Enfermedades Bacterianas, Virales, Parasitarias, Metabólicas, Traumatismos, Intoxicaciones, Vitaminas/Minerales. & 288 & 45.71\% \\
 		\hline
 	
 		\textbf{Inmunizaciones (Vacunaciones)} & Vacunación Parvovirus, Heptavalente, Triple felina, Rabia. & 139 & 22.06\% \\
@@ -84,5 +78,10 @@
 		\textbf{TOTAL} & Suma de todas las actividades reportadas en el internado & \textbf{630} & \textbf{100.00\%} \\
 		\hline
 	\end{longtable}
-	Esto refleja la aplicación práctica de los conocimientos adquiridos durante el internado, abarcando desde la medicina preventiva 	(Inmunizaciones, Desparasitaciones) y las habilidades técnicas (Cirugías) hasta el manejo de patologías específicas (Tratamientos).
+	
+	\normalsize
+	
+	% Resumen conciso de la tabla
+	La tabla resume las actividades veterinarias realizadas durante el internado, totalizando 630 casos. Los tratamientos representaron el 45.71\% (288 casos), las inmunizaciones el 22.06\% (139 casos), las desparasitaciones el 21.11\% (133 casos), la imagenología y servicios auxiliares el 5.87\% (37 casos), finalmente las cirugías el 5.24\% (33 casos). Esto demuestra una amplia gama de intervenciones clínicas, desde medicina preventiva hasta procedimientos quirúrgicos.
+
 \end{landscape}
