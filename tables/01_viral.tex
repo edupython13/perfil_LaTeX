@@ -15,32 +15,32 @@
 	% CÁLCULO DE ANCHOS DE COLUMNAS
 	% =============================================================================
 	\setlength{\availablewidth}{\linewidth}
-	
+
 	% Restamos (8 columnas * 2 lados) = 16 espacios para un ajuste matemático exacto
     \addtolength{\availablewidth}{-16\tabcolsep}
-    
+
     % Restamos el ancho de las líneas verticales (9 líneas * 0.4pt estándar)
     \addtolength{\availablewidth}{-3.6pt}
 
 	% Macro for table header to improve maintainability
 	\newcommand{\tableheader}{\rowcolor{blue!10}
-		\textbf{ESPE\-CIE} & \textbf{Nº DE CASOS} & \textbf{ENFERMEDAD} & \textbf{FÁRMACO} &
+		\textbf{ESPE\-CIE} & \textbf{Nº DE CASOS} & \textbf{ENFERME\-DADES} & \textbf{FÁRMACO} &
 		\textbf{PRINCIPIO ACTIVO} & \textbf{DOSIS/VÍA DE ADMINISTRACIÓN} &
-		\textbf{DURA\-CIÓN} & \textbf{OBSERVACIO\-NES} \\
+		\textbf{DURA\-CIÓN} & \textbf{OBSERVA\-CIO\-NES} \\
 	}
 
 	% =============================================================================
 	% LONGTABLE CON CAPTION AL PRINCIPIO
 	% =============================================================================
 	\begin{longtable}{
-		|>{\centering\arraybackslash}m{0.08\availablewidth}           % ESPECIE
-		|>{\centering\arraybackslash}m{0.07\availablewidth}           % Nº CASOS
-		|>{\centering\arraybackslash}m{0.12\availablewidth}           % ENFERMEDADES
-		|>{\raggedright\arraybackslash}m{0.12\availablewidth}          % FÁRMACO
-		|>{\justifying\arraybackslash}m{0.245\availablewidth}          % PRINCIPIO ACTIVO
-		|>{\raggedright\arraybackslash}m{0.185\availablewidth}          % DOSIS/VÍA
-		|>{\centering\arraybackslash}m{0.06\availablewidth}            % TIEMPO
-		|>{\raggedright\arraybackslash}m{0.12\availablewidth}|         % OBSERVACIONES
+		|C{0.08\availablewidth}           % ESPECIE
+		|C{0.07\availablewidth}           % Nº CASOS
+		|C{0.11\availablewidth}           % ENFERMEDADES
+		|L{0.13\availablewidth}          % FÁRMACO
+		|J{0.255\availablewidth}          % PRINCIPIO ACTIVO
+		|L{0.185\availablewidth}          % DOSIS/VÍA
+		|C{0.06\availablewidth}            % TIEMPO
+		|L{0.11\availablewidth}|         % OBSERVACIONES
 	}
 
 		% ──────────────── ENCABEZADO Y CAPTION DE LA PRIMERA PÁGINA ────────────────
@@ -50,7 +50,7 @@
 		\tableheader
 		\hline
 		\endfirsthead
-		
+
 		% ──────────────── ENCABEZADO PARA PÁGINAS SIGUIENTES (SOLUCIÓN) ────────────────
 		% Se usa \multicolumn para el título de continuación
 		\multicolumn{8}{l}{\normalsize\textbf{(Continuación) Cuadro \ref{tab:virales}}. Registro de Tratamientos para Enfermedades Virales} \\[6pt]
@@ -65,7 +65,7 @@
 		\endfoot
 
 		% ──────────────── PIE FINAL (para la última página) ────────────────
-		\hline
+		%\hline
 		\multicolumn{8}{l}{\footnotesize\textit{\textbf{Fuente}: Elaboración propia.}}
 		\endlastfoot
 
@@ -122,9 +122,14 @@
 		\cline{4-6}
 		& & & Ditral & Sulfadoxina, trimetoprima & 1ml/10kg IV-IM & & \\
 		\hline
+
+		\rowcolor{green!10} % Verde claro para el total
+		\textbf{TOTAL} & \textbf{27} \\
+		\cline{1-2}
+
 	\end{longtable}
-	\vspace{-6pt}\normalsize
+	\vspace{-12pt}\normalsize
 	% Resumen conciso de la tabla
-	La tabla registra los tratamientos aplicados para enfermedades virales en animales durante el internado en el Hospital para Animales de la Facultad Integral Defensores del Chaco. Se documentaron 27 casos en caninos (14 de parvovirus, 5 de distemper y 7 de hepatitis) y 1 caso en felino (panleucopenia). Los tratamientos incluyen fluidoterapia con Ringer Lactato, antibióticos como Ditral y Clortetrasone, analgésicos como Desalgina, vitaminas del complejo B y otros fármacos, administrados por vías intravenosa, intramuscular o subcutánea durante 3-5 días. En general, los resultados fueron satisfactorios, aunque algunos pacientes no respondieron al tratamiento.
+	El cuadro registra los tratamientos aplicados para enfermedades virales en caninos y felinos durante el internado. Se documentaron 27 casos: 14 de parvovirus, 5 de distemper, 7 de hepatitis en caninos y 1 de panleucopenia en felino. Los tratamientos incluyen fluidoterapia con Ringer Lactato, antibióticos como Ditral y Clortetrasone, analgésicos como Desalgina, vitaminas del complejo B y otros fármacos, administrados por vías intravenosa, intramuscular o subcutánea durante 3-5 días, con resultados faborables.
 
 \end{landscape}

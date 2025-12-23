@@ -20,23 +20,23 @@
 	\addtolength{\availablewidth}{-3.6pt}
 
 	\newcommand{\tableheader}{\rowcolor{blue!10}
-		\textbf{ESPECIE} & \textbf{Nº DE CASOS} & \textbf{CIRUGÍA} &
+		\textbf{ESPE\-CIE} & \textbf{Nº DE CASOS} & \textbf{CIRUGÍA} &
 		\textbf{FÁRMACO} & \textbf{PRINCIPIO ACTIVO} & \textbf{DOSIS} &
-		\textbf{VÍA DE ADMINISTRACIÓN} & \textbf{OBSERVACIO\-NES} \\
+		\textbf{VÍA DE ADMI\-NIS\-TRA\-CIÓN} & \textbf{OBSER\-VA\-CIO\-NES} \\
 	}
 
 	% =============================================================================
 	% TABLA
 	% =============================================================================
 	\begin{longtable}{
-		|>{\centering\arraybackslash}m{0.08\availablewidth}    %Especie
-		|>{\centering\arraybackslash}m{0.07\availablewidth}    %Casos
-		|>{\centering\arraybackslash}m{0.10\availablewidth}    %Cirugia
-		|>{\raggedright\arraybackslash}m{0.16\availablewidth}  %Farmaco
-		|>{\raggedright\arraybackslash}m{0.22\availablewidth}  %Principio
-		|>{\raggedright\arraybackslash}m{0.13\availablewidth}  %Dosis
-		|>{\raggedright\arraybackslash}m{0.12\availablewidth}  %Via
-		|>{\raggedright\arraybackslash}m{0.12\availablewidth}| %Observaciones
+		|C{0.07\availablewidth}    %Especie
+		|C{0.07\availablewidth}    %Casos
+		|C{0.10\availablewidth}    %Cirugia
+		|L{0.16\availablewidth}  %Farmaco
+		|L{0.21\availablewidth}  %Principio
+		|L{0.13\availablewidth}  %Dosis
+		|L{0.12\availablewidth}  %Via
+		|L{0.14\availablewidth}| %Observaciones
 	}
 
 		% -----------------------------------------------------------------------------
@@ -65,7 +65,8 @@
 		\multicolumn{8}{r}{\footnotesize\textit{Continúa en la siguiente página \ldots}}
 		\endfoot
 
-		\hline
+		% -------- FINAL PIE DE PÁGINA ----------
+		%\hline
 		\multicolumn{8}{l}{\footnotesize\textit{\textbf{Fuente}: Elaboración propia.}}
 		\endlastfoot
 
@@ -97,9 +98,9 @@
 		% =============================================================================
 		% CANINO – OVH
 		% =============================================================================
-		\multirow{17}{*}{\textbf{Canino}} &
-		\multirow{17}{*}{7} &
-		\multirow{17}{*}{OVH} &
+		\multirow{16}{*}{\textbf{Canino}} &
+		\multirow{16}{*}{7} &
+		\multirow{16}{*}{OVH} &
 		Xilacina & Xilacina & 1\,ml/20\,kg & IV-IM & \\
 		\cline{4-7}
 		& & & Lidocaína & Lidocaína & Según criterio médico & IM-SC & \\
@@ -161,9 +162,9 @@
 		% =============================================================================
 		% FELINO – OVH
 		% =============================================================================
-		\multirow{17}{*}{\textbf{Felino}} &
-		\multirow{17}{*}{14} &
-		\multirow{17}{*}{OVH} &
+		\multirow{16}{*}{\textbf{Felino}} &
+		\multirow{16}{*}{14} &
+		\multirow{16}{*}{OVH} &
 		Xilacina & Xilacina & 1\,ml/20\,kg & IV-IM & \\
 		\cline{4-7}
 		& & & Lidocaína & Lidocaína & Según criterio médico & IM-SC & \\
@@ -196,10 +197,31 @@
 		\cline{4-7}
 		& & & Hilo externo & Lino retorcido & --- & --- & \\
 		\hline
+		& & & & & & &  \\
+
+		% =============================================================================
+		% BOVINO – PROLAPSO UTERINO
+		% =============================================================================
+		\multirow{6}{*}{\textbf{Bovino}} & \multirow{6}{*}{2} & \multirow{6}{=}{Reducción de Prolapso Uterino} & Xilacina 2\% & Xilacina & 1ml/100kg & IM & \multirow{6}{=}{Satisfactorio. Se realizó lavado con antisépticos, reposición manual y sutura vulvar (técnica de Buhner).} \\
+		\cline{4-7}
+		& & & Lidocaina 2\% & Lidocaina & 5-10ml & Epidural & \\
+		\cline{4-7}
+		& & & Oxitocina & Oxitocina & 5ml & IM & \\
+		\cline{4-7}
+		& & & Cefavet & Cefalexina & 1ml/45kg & IM & \\
+		\cline{4-7}
+		& & & Desalgina & Dipirona & 20ml & IV & \\
+		\cline{4-7}
+		& & & Hilo de Nylon & Material no absorbilble & Según técnica & Sutura & \\
+		\hline
+
+		\rowcolor{green!10} % Verde claro para el total
+		\textbf{TOTAL} & \textbf{35} \\
+		\cline{1-2}
 
 	\end{longtable}
-	\vspace{-6pt}\normalsize
+	\vspace{-12pt}\normalsize
 	% Resumen conciso de la tabla
-	La tabla registra las cirugías realizadas durante el internado en el Hospital para Animales. Se documentaron 33 procedimientos: 3 orquiectomías y 7 OVH en caninos, y 9 orquiectomías y 14 OVH en felinos. Los protocolos quirúrgicos incluyen anestesia con Xilacina, Lidocaína y Keta-A, antibióticos como Cefavet, tratamientos tópicos como Galmetrim plus y Yodo podovidona, suturas con Ácido poliglicólico y Hilo externo. En las OVH, se agregó soporte con analgésicos como Desalgina, Atropina, fluidoterapia con Ringer Lactato, protectores hepáticos como Mercepton y vitaminas, con resultados satisfactorios en todos los casos.
+	El cuadro registra las cirugías realizadas durante el internado. Se documentaron 35 casos: 3 orquiectomías y 7 OVH en caninos, 9 orquiectomías y 14 OVH en felinos, 2 reducciones de prolapso uterino en bovinos. Los procedimientos incluyeron anestésicos como Xilacina y Keta-A (ketamina), antibióticos como Cefavet (cefalexina), analgésicos como Desalgina (dipirona), tratamientos tópicos como Galmetrim plus y Yodo podovidona, administrados por vías intravenosa, intramuscular, subcutánea o tópica, con resultados satisfactorios.
 
 \end{landscape}

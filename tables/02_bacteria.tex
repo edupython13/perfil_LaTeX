@@ -12,16 +12,16 @@
 	% CÁLCULO DE ANCHOS DE COLUMNAS
 	% =============================================================================
 	\setlength{\availablewidth}{\linewidth}
-	
+
 	% Restamos (8 columnas * 2 lados) = 16 espacios para un ajuste matemático exacto
     \addtolength{\availablewidth}{-16\tabcolsep}
-    
+
     % Restamos el ancho de las líneas verticales (9 líneas * 0.4pt estándar)
     \addtolength{\availablewidth}{-3.6pt}
 
 	\newcommand{\tableheader}{\rowcolor{blue!10}
-		\textbf{ESPE\-CIE} & \textbf{Nº DE CASOS} & \textbf{ENFERMEDADES} & \textbf{FÁRMACO} & 
-		\textbf{PRINCIPIO ACTIVO} & \textbf{DOSIS/VÍA DE ADMINISTRACIÓN} & 
+		\textbf{ESPE\-CIE} & \textbf{Nº DE CASOS} & \textbf{ENFERMEDADES} & \textbf{FÁRMACO} &
+		\textbf{PRINCIPIO ACTIVO} & \textbf{DOSIS/VÍA DE ADMINISTRACIÓN} &
 		\textbf{DURA\-CIÓN} & \textbf{OBSERVACIO\-NES} \\
 	}
 
@@ -29,14 +29,14 @@
 	% LONGTABLE CON CAPTION AL PRINCIPIO
 	% =============================================================================
 	\begin{longtable}{
-		|>{\centering\arraybackslash}m{0.08\availablewidth}			% ESPECIE
-		|>{\centering\arraybackslash}m{0.07\availablewidth}           % Nº CASOS
-		|>{\centering\arraybackslash}m{0.14\availablewidth}           % ENFERMEDADES
-		|>{\raggedright\arraybackslash}m{0.12\availablewidth}          % FÁRMACO
-		|>{\raggedright\arraybackslash}m{0.25\availablewidth}          % PRINCIPIO ACTIVO
-		|>{\raggedright\arraybackslash}m{0.16\availablewidth}          % DOSIS/VÍA
-		|>{\centering\arraybackslash}m{0.06\availablewidth}            % TIEMPO
-		|>{\raggedright\arraybackslash}m{0.12\availablewidth}|         % OBSERVACIONES
+		|C{0.08\availablewidth}			% ESPECIE
+		|C{0.07\availablewidth}           % Nº CASOS
+		|C{0.14\availablewidth}           % ENFERMEDADES
+		|L{0.12\availablewidth}          % FÁRMACO
+		|J{0.25\availablewidth}          % PRINCIPIO ACTIVO
+		|L{0.16\availablewidth}          % DOSIS/VÍA
+		|C{0.06\availablewidth}            % TIEMPO
+		|L{0.12\availablewidth}|         % OBSERVACIONES
 	}
 
 		% ──────────────── Encabezado y CAPTION COMO TÍTULO (solo en primera página) ────────────────
@@ -60,7 +60,7 @@
 		\endfoot
 
 		% ──────────────── PIE FINAL ────────────────
-		\hline
+		%\hline
 		\multicolumn{8}{l}{\footnotesize\textit{\textbf{Fuente}: Elaboración propia.}}
 		\endlastfoot
 
@@ -121,9 +121,13 @@
 		& & & Opter & Enrofloxacina, clotrimazol, betametazona, ivermectina & 6-12 gotas V.Ótica & & \\
 		\hline
 
+		\rowcolor{green!10} % Verde claro para el total
+		\textbf{TOTAL} & \textbf{61} \\
+		\cline{1-2}
+
 	\end{longtable}
-	\vspace{-6pt}\normalsize
+	\vspace{-12pt}\normalsize
 	% Resumen conciso de la tabla
-	La tabla registra los tratamientos aplicados para enfermedades bacterianas en animales durante el internado. Se documentaron 61 casos en caninos (15 de traqueo-bronquitis, 29 de gastroenteritis, 10 de conjuntivitis y 7 de otitis) y 8 casos en felinos (3 de traqueo-bronquitis, 4 de conjuntivitis y 1 de otitis). Los tratamientos incluyen antibióticos como Interflox, Gentamicin y Dexaflox, antiinflamatorios, expectorantes como Bromexan, vitaminas y fluidoterapia, administrados por vías intramuscular, subcutánea, intravenosa u oftálmica/ótica durante 3-5 días, con resultados satisfactorios en todos los casos.
+	El cuadro registra los tratamientos aplicados para enfermedades bacterianas en animales durante el internado. Se documentaron 61 casos en caninos (15 de traqueo-bronquitis, 29 de gastroenteritis, 10 de conjuntivitis y 7 de otitis) y 8 casos en felinos (3 de traqueo-bronquitis, 4 de conjuntivitis y 1 de otitis). Los tratamientos incluyen antibióticos como Interflox, Gentamicin y Dexaflox, antiinflamatorios, expectorantes como Bromexan, vitaminas y fluidoterapia, administrados por vías intramuscular, subcutánea, intravenosa u oftálmica/ótica durante 3-5 días, con resultados satisfactorios en todos los casos.
 
 \end{landscape}

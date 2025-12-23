@@ -21,17 +21,17 @@
 
 	% MACRO HEADER
 	\newcommand{\tableheader}{\rowcolor{blue!10}
-		\textbf{ESPECIE} & \textbf{Nº DE CASOS} & \textbf{INMUNIZACIÓN} & 
+		\textbf{ESPECIE} & \textbf{Nº DE CASOS} & \textbf{INMUNIZACIÓN} &
 		\textbf{FÁRMACO} & \textbf{PRINCIPIO ACTIVO} & \textbf{DOSIS/VÍA DE AD\-MINISTRACIÓN} \\
 	}
 
 	\begin{longtable}{
-		|>{\centering\arraybackslash}m{0.11\availablewidth}    % ESPECIE
-		|>{\centering\arraybackslash}m{0.1\availablewidth}    % CASOS
-		|>{\raggedright\arraybackslash}m{0.24\availablewidth}  % INMUNIZACION
-		|>{\raggedright\arraybackslash}m{0.14\availablewidth}  % FARMACO
-		|>{\raggedright\arraybackslash}m{0.2\availablewidth}  % PRINCIPIO
-		|>{\raggedright\arraybackslash}m{0.21\availablewidth}|   % DOSIS
+		|C{0.1\availablewidth}    % ESPECIE
+		|C{0.1\availablewidth}    % CASOS
+		|J{0.26\availablewidth}  % INMUNIZACION
+		|L{0.14\availablewidth}  % FARMACO
+		|J{0.23\availablewidth}  % PRINCIPIO
+		|L{0.17\availablewidth}|   % DOSIS
 		% SUMA TOTAL: 1.00
 	}
 
@@ -55,7 +55,7 @@
 		\multicolumn{6}{r}{\footnotesize\textit{Continúa en la siguiente página \ldots}}
 		\endfoot
 
-		\hline
+		%\hline
 		\multicolumn{6}{l}{\footnotesize\textit{\textbf{Fuente}: Elaboración propia.}}
 		\endlastfoot
 
@@ -76,9 +76,16 @@
 		\textbf{Felino} & 5 & Panleucopenia, rinotraqueitis, calicivirus & Triple felina & Virus inactivado & 1ml/animal SC \\
 		\hline
 
+		\textbf{Bovino} & 210 & Rabia & BAGOVAC RABIA & Virus inactivado & 1ml/animal SC \\
+		\hline
+
+		\rowcolor{green!10} % Verde claro para el total
+		\textbf{TOTAL} & \textbf{349} \\
+		\cline{1-2}
+
 	\end{longtable}
-	\vspace{-6pt}\normalsize
+	\vspace{-12pt}\normalsize
 	% Resumen conciso de la tabla
-	La tabla registra las vacunaciones aplicadas durante el internado en el Hospital para Animales. Se documentaron 139 casos en caninos (97 contra parvovirus con Hipradog pv, 36 contra múltiples enfermedades con Hipradog p7 Heptavalente y 1 contra rabia con Rabvac 3TK) y 5 casos en felinos contra panleucopenia, rinotraqueitis y calicivirus con Triple felina. Todas las vacunas se administraron por vía subcutánea a dosis de 1ml por animal.
+	El cuadro registra las vacunaciones aplicadas durante el internado. Se documentaron 349 casos: 134 en caninos contra parvovirus, moquillo y rabia; 5 en felinos contra panleucopenia, rinotraqueitis y calicivirus; 210 en bovinos contra rabia. Las vacunas incluyen Hipradog pv (virus vivo modificado), Hipradog p7 (virus vivo modificado), Rabvac 3TK (virus inactivado), Triple felina (virus inactivado), BAGOVAC RABIA (virus inactivado), administradas por vía subcutánea a 1ml por animal.
 
 \end{landscape}

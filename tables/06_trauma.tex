@@ -20,23 +20,23 @@
 	\addtolength{\availablewidth}{-3.6pt}
 
 	\newcommand{\tableheader}{\rowcolor{blue!10}
-		\textbf{ESPECIE} & \textbf{Nº DE CASOS} & \textbf{ENFERMEDADES} & \textbf{FÁRMACO} & 
-		\textbf{PRINCIPIO ACTIVO} & \textbf{DOSIS/VÍA DE ADMINISTRACIÓN} & 
-		\textbf{DURA\-CIÓN} & \textbf{OBSERVACIO\-NES} \\
+		\textbf{ESPE\-CIE} & \textbf{Nº DE CASOS} & \textbf{ENFERME\-DA\-DES} & \textbf{FÁRMACO} &
+		\textbf{PRINCIPIO ACTIVO} & \textbf{DOSIS/VÍA DE ADMINISTRACIÓN} &
+		\textbf{DURA\-CIÓN} & \textbf{OBSERVA\-CIO\-NES} \\
 	}
 
 	% =============================================================================
 	% LONGTABLE CON CAPTION AL PRINCIPIO
 	% =============================================================================
 	\begin{longtable}{
-		|>{\centering\arraybackslash}m{0.08\availablewidth}           % ESPECIE
-		|>{\centering\arraybackslash}m{0.07\availablewidth}           % Nº CASOS
-		|>{\centering\arraybackslash}m{0.14\availablewidth}           % ENFERMEDADES
-		|>{\raggedright\arraybackslash}m{0.12\availablewidth}          % FÁRMACO
-		|>{\raggedright\arraybackslash}m{0.24\availablewidth}          % PRINCIPIO ACTIVO
-		|>{\raggedright\arraybackslash}m{0.16\availablewidth}          % DOSIS/VÍA
-		|>{\centering\arraybackslash}m{0.07\availablewidth}            % TIEMPO
-		|>{\raggedright\arraybackslash}m{0.12\availablewidth}|         % OBSERVACIONES
+		|C{0.07\availablewidth}           % ESPECIE
+		|C{0.07\availablewidth}           % Nº CASOS
+		|C{0.12\availablewidth}           % ENFERMEDADES
+		|L{0.12\availablewidth}          % FÁRMACO
+		|J{0.3\availablewidth}          % PRINCIPIO ACTIVO
+		|L{0.16\availablewidth}          % DOSIS/VÍA
+		|C{0.06\availablewidth}            % TIEMPO
+		|L{0.1\availablewidth}|         % OBSERVACIONES
 	}
 
 		% ──────────────── CAPTION COMO TÍTULO (solo en primera página) ────────────────
@@ -60,7 +60,7 @@
 		\endfoot
 
 		% ──────────────── PIE FINAL ────────────────
-		\hline
+		%\hline
 		\multicolumn{8}{l}{\footnotesize\textit{\textbf{Fuente}: Elaboración propia.}}
 		\endlastfoot
 
@@ -70,7 +70,7 @@
 
 		% Canino – Traumatismo (fractura)
 		\multirow{7}{*}{\textbf{Canino}} & \multirow{7}{*}{4} & \multirow{7}{=}{\centering{Traumatismo (fractura)}} &
-		Xilacina & Xilacina & 1ml/20kg IV-IM & \multirow{7}{=}{3-4 semanas} &  \\
+		Xilacina & Xilacina & 1ml/20kg IV-IM & \multirow{7}{=}{\centering 3-4 semanas} &  \\
 		\cline{4-6}
 		& & & Lidocaina & Lidocaina & Según criterio médico & & \\
 		\cline{4-6}
@@ -107,9 +107,13 @@
 		& & & Emplasto cicatrizante & Ácido galotanico, podovidona, yodo metálico, yodo de potasio & Tópico & & \\
 		\hline
 
+		\rowcolor{green!10} % Verde claro para el total
+		\textbf{TOTAL} & \textbf{30} \\
+		\cline{1-2}
+
 	\end{longtable}
-	\vspace{-6pt}\normalsize
+	\vspace{-12pt}\normalsize
 	% Resumen conciso de la tabla
-	La tabla registra los tratamientos aplicados para traumatismos en caninos y felinos durante el internado. Se documentaron 30 casos: 4 de fracturas, 24 de politraumatismo en caninos y 2 de contusiones en felinos. Los tratamientos incluyen sedantes como Xilacina, anestésicos como Lidocaina, antibióticos como Oximed, analgésicos como Desalgina y Diclofenaco, antiinflamatorios como Ankofen, vitaminas del complejo B y antisépticos tópicos como Yodo podovidona, administrados por vías intravenosa, intramuscular, subcutánea o tópica durante 3-5 días o 3-4 semanas según la gravedad, con resultados satisfactorios en todos los casos.
+	Se registraron 30 tratamientos para traumatismos en caninos (28 casos) y felinos (2 casos), con analgésicos, antibióticos, administrados por vías intravenosa, intramuscular, subcutánea o tópica con resultados satisfactorios.
 
 \end{landscape}

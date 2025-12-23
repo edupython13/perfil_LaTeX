@@ -20,23 +20,23 @@
 	\addtolength{\availablewidth}{-3.6pt}
 
 	\newcommand{\tableheader}{\rowcolor{blue!10}
-		\textbf{ESPECIE} & \textbf{Nº DE CASOS} & \textbf{PROCEDIMIENTO} & \textbf{FÁRMACO} & 
-		\textbf{PRINCIPIO ACTIVO} & \textbf{DOSIS/VÍA DE AD\-MINISTRACIÓN} & 
-		\textbf{DURA\-CIÓN} & \textbf{OBSERVACIO\-NES} \\
+		\textbf{ESPE\-CIE} & \textbf{Nº DE CASOS} & \textbf{PROCEDIMIENTO} & \textbf{FÁRMACO} &
+		\textbf{PRINCIPIO ACTIVO} & \textbf{DOSIS/VÍA DE AD\-MINISTRACIÓN} &
+		\textbf{DURA\-CIÓN} & \textbf{OBSERVA\-CIO\-NES} \\
 	}
 
 	% =============================================================================
 	% LONGTABLE CON CAPTION AL PRINCIPIO
 	% =============================================================================
 	\begin{longtable}{
-		|>{\centering\arraybackslash}m{0.08\availablewidth}          % ESPECIE
-		|>{\centering\arraybackslash}m{0.08\availablewidth}           % Nº CASOS
-		|>{\centering\arraybackslash}m{0.17\availablewidth}           % PROCEDIMIENTO
-		|>{\raggedright\arraybackslash}m{0.12\availablewidth}          % FÁRMACO
-		|>{\raggedright\arraybackslash}m{0.20\availablewidth}          % PRINCIPIO ACTIVO
-		|>{\raggedright\arraybackslash}m{0.16\availablewidth}          % DOSIS/VÍA
-		|>{\centering\arraybackslash}m{0.06\availablewidth}           % DURACIÓN
-		|>{\raggedright\arraybackslash}m{0.13\availablewidth}|         % OBSERVACIONES
+		|C{0.07\availablewidth}          % ESPECIE
+		|C{0.07\availablewidth}           % Nº CASOS
+		|J{0.17\availablewidth}           % PROCEDIMIENTO
+		|L{0.12\availablewidth}          % FÁRMACO
+		|J{0.26\availablewidth}          % PRINCIPIO ACTIVO
+		|L{0.16\availablewidth}          % DOSIS/VÍA
+		|C{0.06\availablewidth}           % DURACIÓN
+		|L{0.09\availablewidth}|         % OBSERVACIONES
 	}
 
 		% ──────────────── CAPTION COMO TÍTULO (solo en primera página) ────────────────
@@ -46,35 +46,35 @@
 		\tableheader
 		\hline
 		\endfirsthead
-		
+
 		% ──────────────── ENCABEZADO PARA PÁGINAS SIGUIENTES ────────────────
 		\multicolumn{8}{l}{\normalsize\textbf{(Continuación)} Cuadro \ref{tab:desparasitaciones}. Registro de Desparasitaciones y aplicación de vitaminas realizadas durante el internado} \\[6pt]
 		\hline
 		\tableheader
 		\hline
 		\endhead
-		
+
 		% ──────────────── PIE DE PÁGINA (continuación) ────────────────
 		\hline
 		\multicolumn{8}{r}{\footnotesize\textit{continúa en la siguiente página \ldots}}
 		\endfoot
-		
+
 		% ──────────────── PIE FINAL ────────────────
-		\hline
+		%\hline
 		\multicolumn{8}{l}{\footnotesize\textit{\textbf{Fuente}: Elaboración propia.}}
 		\endlastfoot
-		
+
 		% =============================================================================
 		% CONTENIDO DE LA TABLA (extraído del PDF '08_desparasitaciones.pdf')
 		% =============================================================================
-		
+
 		% CANINO – Desparasitación externa
 		\multirow{2}{*}{\textbf{Canino}} & \multirow{2}{*}{8} & \multirow{2}{*}{\parbox{\linewidth}{Desparasitación externa}} &
 		Impacto & Cipermetrina, clorpirifos, citronelal & 1ml/1litro de agua & \multirow{2}{*}{1 mes} & \\
 		\cline{4-6}
 		& & & Galerfin & Clorfeniramina maleto & 0,2-2ml IV-IM & & \\
 		\hline
-		
+
 		% CANINO – Desparasitación interna
 		\multirow{3}{*}{\textbf{Canino}} & \multirow{3}{*}{67} & \multirow{3}{*}{\parbox{\linewidth}{Desparasitación interna}} &
 		Levocan & Levamisol & 5 gotas/1kg Oral & \multirow{3}{*}{3 meses} & \\
@@ -83,24 +83,32 @@
 		\cline{4-6}
 		& & & Vermic total & Praziquantel, pirantel pamoato, febantel & 1 tableta/10kg oral & & \\
 		\hline
-		
+
 		% CANINO – Desparasitación interna-externa
 		\multirow{2}{*}{\textbf{Canino}} & \multirow{2}{*}{58} & \multirow{2}{=}{Desparasitación interna y externa} &
 		Ranger & Ivermectina 1\% & 1ml/30kg SC & \multirow{2}{*}{3 meses} & \\
 		\cline{4-6}
 		& & & Galerfin & Clorfeniramina maleto & 0,2-2ml IV-IM & & \\
 		\hline
-		
+
 		% CANINO – Aplicación de vitaminas y minerales
 		\multirow{2}{*}{\textbf{Canino}} & \multirow{2}{*}{125} & \multirow{2}{=}{Aplicación de vitaminas y minerales} &
-		AminoLab Forte & Aminoácidos, dextrosa, cloruro de potasio, cloruro de sodio, cloruro de calcio, acetato de sodio, vitamina B1 B2 	B6 	B12 & 1ml/1kg IV & \multirow{2}{=}{Cada 15 días} & \\
+		AminoLab Forte & Aminoácidos, dextrosa, cloruro de potasio, cloruro de sodio, cloruro de calcio, acetato de sodio, vitamina B1 B2 	B6 	B12 & 1ml/1kg IV & \multirow{2}{=}{\centering Cada 15 días} & \\
 		\cline{4-6}
 		& & & Complejo B & Vitamina B1, Vitamina B2, Vitamina B6, Vitamina B12, Vitamina B15 & 1ml/20kg IM-SC & & \\
 		\hline
 
+		% BOVINO – Desparasitación interna-externa
+		\textbf{Bovino} & 160 & Desparasitación interna y externa & Ranger & Ivermectina 1\% & 1ml/50kg SC & 3-6 meses & \\
+		\hline
+
+		\rowcolor{green!10} % Verde claro para el total
+		\textbf{TOTAL} & \textbf{418} \\
+		\cline{1-2}
+
 	\end{longtable}
-	\vspace{-6pt}\normalsize
+	\vspace{-12pt}\normalsize
 	% Resumen conciso de la tabla
-	La tabla registra las desparasitaciones y aplicaciones de vitaminas realizadas en caninos durante el internado en el Hospital para Animales. Se documentaron 258 procedimientos: 8 desparasitaciones externas, 67 internas, 58 combinadas (interna y externa) y 125 aplicaciones de vitaminas y minerales. Los tratamientos incluyen antiparasitarios como Ranger (ivermectina), Levocan (levamisol), Basken (pamoato de pirantel y oxantel), Vermic total (praziquantel, pirantel pamoato, febantel) e Impacto (cipermetrina, clorpirifos, citronelal), antihistamínicos como Galerfin, y vitaminas como AminoLab Forte y Complejo B, administrados por vías oral, subcutánea, intramuscular o intravenosa, con frecuencias de 1 mes, 3 meses o cada 15 días, con resultados satisfactorios en todos los casos.
+	El cuadro registra las desparasitaciones y aplicaciones de vitaminas realizadas durante el internado. Se documentaron 418 casos: 8 desparasitaciones externas, 67 internas, 58 combinadas y 125 aplicaciones de vitaminas en caninos; 160 desparasitaciones combinadas en bovinos. Los tratamientos incluyen antiparasitarios como Ranger (ivermectina), Levocan (levamisol), Basken (pirantel), Vermic total (praziquantel), antihistamínicos como Galerfin, vitaminas como AminoLab Forte y Complejo B, administrados por vías oral, subcutánea, intramuscular o intravenosa durante 1 mes a 6 meses.
 
 \end{landscape}

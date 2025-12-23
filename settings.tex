@@ -89,13 +89,13 @@
 % Requiere los paquetes 'array' y 'ragged2e'
 % ===================================================================
 % Columna L: Alineación vertical media y horizontal a la IZQUIERDA
-\newcolumntype{L}[1]{>{\RaggedRight\arraybackslash}m{#1}}
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}m{#1}}
 
 % Columna R: Alineación vertical media y horizontal a la DERECHA
-\newcolumntype{R}[1]{>{\RaggedLeft\arraybackslash}m{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\arraybackslash}m{#1}}
 
 % Columna C: Alineación vertical media y horizontal CENTRADA (Su ejemplo original)
-\newcolumntype{C}[1]{>{\Centering\arraybackslash}m{#1}}
+\newcolumntype{C}[1]{>{\centering\arraybackslash}m{#1}}
 
 % Columna J: Alineación vertical media y JUSTIFICADA (Flujo de párrafo normal)
 \newcolumntype{J}[1]{>{\justifying\arraybackslash}m{#1}}
@@ -114,9 +114,9 @@
 
 % === TABLE OF CONTENTS (CENTERED, UPPERCASE, GLOBAL STYLE) ===
 \addto\captionsspanish{%
-	\renewcommand{\contentsname}{\centering\normalsize\bfseries ÍNDICE GENERAL}%
+	\renewcommand{\contentsname}{\hfill \MakeUppercase{ÍNDICE GENERAL} \hfill\hfill}%
 }
-\renewcommand{\cfttoctitlefont}{\centering\normalsize\bfseries}
+\renewcommand{\cfttoctitlefont}{\normalsize\bfseries}
 
 % Section title formats
 \titleformat{\section}[hang]{\normalsize\bfseries}{\thesection}{1em}{}
@@ -216,9 +216,9 @@
 	pdfcreator={LaTeX con pdfTeX},
 	pdfproducer={TeX Live 2025},
 	hidelinks,
-	colorlinks=false,
+	colorlinks=true,
 	linkcolor=black,
-	citecolor=black,
+	citecolor=blue,
 	urlcolor=gray,
 	%bookmarks=true,
 	bookmarksopen=true,

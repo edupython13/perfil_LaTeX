@@ -1,35 +1,35 @@
 % 11_resumen.tex
 \begin{landscape}
-	
+
 	\setlength{\tabcolsep}{2pt}
 	\setlength{\extrarowheight}{3pt}
-	
+
 	%\renewcommand{\arraystretch}{1.5}
 	\fontsize{10pt}{12pt}\selectfont
 	%\definecolor{azulclinica}{RGB}{230, 240, 255}
-	
+
 	% =============================================================================
 	% CÁLCULO DE ANCHOS DE COLUMNAS
 	% =============================================================================
 	\setlength{\availablewidth}{\linewidth}
-	
+
 	% Restamos (4 columnas * 2 lados) = 8 espacios para un ajuste matemático exacto
     \addtolength{\availablewidth}{-8\tabcolsep}
-    
+
     % Restamos el ancho de las líneas verticales (5 líneas * 0.4pt estándar)
     \addtolength{\availablewidth}{-2pt}
 
 	\newcommand{\tableheader}{\rowcolor{blue!10}
 		\textbf{CATEGORÍAS} & \textbf{DETALLE DE ACTIVIDADES AGRUPADAS} & \textbf{TOTAL CASOS} & \textbf{PORCENTAJE (\%)} \\
 	}
-	
+
 	\begin{longtable}{
-		|>{\centering\arraybackslash}m{0.22\availablewidth}	%Categoria
-		|>{\raggedright\arraybackslash}m{0.45\availablewidth}	%Detalle
-		|>{\raggedleft\arraybackslash}m{0.15\availablewidth}		%Casos
-		|>{\raggedleft\arraybackslash}m{0.18\availablewidth}|		%Porcentaje
+		|C{0.22\availablewidth}	%Categoria
+		|J{0.45\availablewidth}	%Detalle
+		|R{0.15\availablewidth}		%Casos
+		|R{0.18\availablewidth}|		%Porcentaje
 	}
-	
+
 		% ──────────────── CAPTION COMO TÍTULO (solo en primera página) ────────────────
 		\caption{\raggedright Resumen de actividades veterinarias realizadas durante el internado}
 		\label{tab:actividades_veterinarias} \\
@@ -37,51 +37,51 @@
 		\tableheader
 		\hline
 		\endfirsthead
-	
+
 		% ──────────────── ENCABEZADO PARA PÁGINAS SIGUIENTES ────────────────
 		\multicolumn{4}{l}{\normalsize\textbf{(Continuación) Cuadro \ref{tab:actividades_veterinarias}}. Resumen de actividades veterinarias realizadas durante el internado} \\[6pt]
 		\hline
 		\tableheader
 		\hline
 		\endhead
-	
+
 		% ──────────────── PIE DE PÁGINA (continuación) ────────────────
 		\hline
 		\multicolumn{4}{r}{\footnotesize\textit{Continúa en la siguiente página\ldots}}
 		\endfoot
-	
+
 		% ──────────────── PIE FINAL ────────────────
-		\hline
+		%\hline
 		\multicolumn{4}{l}{\footnotesize\textit{\textbf{Fuente}: Elaboración propia.}} \vspace{-12pt}
 		\endlastfoot
-	
+
 		% =============================================================================
 		% CONTENIDO DE LA TABLA
 		% =============================================================================
-		\textbf{Tratamientos} & Enfermedades Bacterianas, Virales, Parasitarias, Metabólicas, Traumatismos, Intoxicaciones, Vitaminas/Minerales. & 288 & 45.71\% \\
+		\textbf{Desparasitaciones} & Desparasitación interna, externa, interna y externa. & 418 & 41.72\% \\
 		\hline
-	
-		\textbf{Inmunizaciones (Vacunaciones)} & Vacunación Parvovirus, Heptavalente, Triple felina, Rabia. & 139 & 22.06\% \\
+
+		\textbf{Inmunizaciones (Vacunaciones)} & Vacunación Parvovirus, Heptavalente, Triple felina, Rabia. & 349 & 34.83\% \\
 		\hline
-	
-		\textbf{Desparasitaciones} & Desparasitación interna, externa, interna y externa. & 133 & 21.11\% \\
+
+		\textbf{Tratamientos} & Enfermedades Bacterianas, Virales, Parasitarias, Metabólicas, Traumatismos, Intoxicaciones, Vitaminas/Minerales. & 163 & 16.27\% \\
 		\hline
-	
-		\textbf{Imagenología y Servicios Auxiliares} & Rayos X, Ecografía e Internación de pacientes. & 37 & 5.87\% \\
+
+		\textbf{Imagenología y Servicios Auxiliares} & Rayos X, Ecografía e Internación de pacientes. & 37 & 3.69\% \\
 		\hline
-	
-		\textbf{Cirugías} & OVH (Canina y Felina) y Orquiectomia (Canina y Felina). & 33 & 5.24\% \\
+
+		\textbf{Cirugías} & OVH (Canina y Felina), Orquiectomía (Canina y Felina), Reducción de Prolapso Uterino (Bovino). & 35 & 3.49\% \\
 		\hline
-	
-		\hline
+
+		%\hline
 		\rowcolor{green!10} % Verde claro para el total
-		\textbf{TOTAL} & Suma de todas las actividades reportadas en el internado & \textbf{630} & \textbf{100.00\%} \\
+		\textbf{TOTAL} & Suma de todas las actividades reportadas en el internado & \textbf{1002} & \textbf{100.00\%} \\
 		\hline
 	\end{longtable}
-	
+
 	\normalsize
-	
+
 	% Resumen conciso de la tabla
-	La tabla resume las actividades veterinarias realizadas durante el internado, totalizando 630 casos. Los tratamientos representaron el 45.71\% (288 casos), las inmunizaciones el 22.06\% (139 casos), las desparasitaciones el 21.11\% (133 casos), la imagenología y servicios auxiliares el 5.87\% (37 casos), finalmente las cirugías el 5.24\% (33 casos). Esto demuestra una amplia gama de intervenciones clínicas, desde medicina preventiva hasta procedimientos quirúrgicos.
+	El cuadro resume 1002 actividades veterinarias del internado: desparasitaciones (41.72\%, 418 casos), inmunizaciones (34.83\%, 349), tratamientos (16.27\%, 163), imagenología (3.69\%, 37) y cirugías (3.49\%, 35), abarcando desde medicina preventiva hasta intervenciones quirúrgicas.
 
 \end{landscape}
