@@ -33,6 +33,7 @@
 	top=3.0cm,
 	bottom=3.0cm,
 	%noheadfoot, headheight=16pt, headsep=10pt,
+	%includefoot,
 	heightrounded,
 	showframe=false
 ]{geometry}
@@ -46,8 +47,22 @@
 \usepackage{setspace}
 \onehalfspacing
 \usepackage{parskip}
-\pagestyle{plain}
 \raggedbottom
+
+% ===================================================================
+% RIGHT-ALIGN PAGE NUMBERS (Custom plain style)
+% Must be defined before \pagestyle{plain} is called
+% ===================================================================
+\makeatletter
+\def\ps@plain{%
+	\let\@mkboth\@gobbletwo
+	\def\@oddfoot{\hfill\thepage}%
+	\def\@evenfoot{\hfill\thepage}%
+}
+\makeatother
+
+% Apply the custom plain page style
+\pagestyle{plain}
 
 % ===================================================================
 % 5. PACKAGES FOR TABLES AND STRUCTURE
@@ -57,6 +72,10 @@
 \usepackage{float}
 \usepackage{enumitem}
 \usepackage{pdflscape}
+\usepackage{eso-pic}% Para agregar contenido a cada página
+\usepackage{tikz}% Required for landscape page number positioning
+%\usepackage{fancyhdr} % Required for custom page styles in landscape
+\usepackage{etoolbox}
 %\usepackage{booktabs}
 \usepackage{longtable}
 \usepackage[table]{xcolor}
@@ -216,7 +235,7 @@
 	pdfcreator={LaTeX con pdfTeX},
 	pdfproducer={TeX Live 2025},
 	hidelinks,
-	colorlinks=false,
+	colorlinks=true,
 	linkcolor=black,
 	citecolor=blue,
 	urlcolor=gray,
@@ -239,13 +258,96 @@
 }
 
 % ===================================================================
-% 10. LOWERCASE ROMAN PAGE NUMBERS (CORRECTED)
+% 10. LANDSCAPE PAGE STYLE - Coherent page numbering (SIN FANCYHDR)
+% ===================================================================
+% Configuración para que la numeración en páginas landscape aparezca
+% en la parte inferior derecha (visualmente), a 1.5cm de los bordes.
+% NO utiliza fancyhdr para evitar líneas en las cabeceras.
+
+% \makeatletter
+% Definir estilo de página para landscape usando el sistema nativo
+% \def\ps@landscapeplain{%
+%   \let\@mkboth\@gobbletwo
+%   \let\@oddhead\@empty
+%   \let\@evenhead\@empty
+%   \def\@oddfoot{%
+    % \begin{tikzpicture}[remember picture, overlay]
+    %   Usar north east para posicionar en la parte inferior derecha visualmente
+    %   xshift=-1.5cm: 1.5cm desde el borde derecho
+    %   yshift=-1.5cm: 1.5cm desde el borde inferior (visual)
+    %   rotate=90: rota el número para lectura correcta en landscape
+    %   \node[rotate=90, anchor=south east, inner sep=0pt] at
+        % ([xshift=-1.5cm, yshift=-3cm]current page.north east)
+        % {\thepage};
+    % \end{tikzpicture}%
+%   }%
+%   \def\@evenfoot{\@oddfoot}% Mismo pie para páginas pares
+% }
+
+% Aplicar automáticamente el estilo landscapeplain al entrar/salir del entorno
+%\AtBeginEnvironment{landscape}{\pagestyle{landscapeplain}}
+%\AtEndEnvironment{landscape}{\pagestyle{plain}}
+
+%\AtBeginEnvironment{landscape}{\pagestyle{landscapeplain}\AfterEndEnvironment{landscape}{\pagestyle{plain}}}
+%\AtEndEnvironment{landscape}{\pagestyle{plain}}
+%\makeatother
+
+% ===================================================================
+% 10. LANDSCAPE PAGE STYLE - Versión por Coordenadas Absolutas
+% ===================================================================
+\newif\iflandscapemode
+\landscapemodefalse
+
+\makeatletter
+% Estilo vacío para anular el número estándar que pone longtable
+\def\ps@landscapeplain{%
+  	\let\@mkboth\@gobbletwo
+  	\let\@oddhead\@empty
+  	\let\@evenhead\@empty
+  	\let\@oddfoot\@empty
+  	\let\@evenfoot\@empty
+}
+
+\let\original@ps@plain\ps@plain
+
+\AddToShipoutPictureBG{%
+  	\iflandscapemode
+  	  	\begin{tikzpicture}[remember picture, overlay]
+  	  		% REQUERIMIENTO:
+  	  		% 1.5 cm desde el borde inferior visual (que es el borde derecho físico)
+  	  		% 3.0 cm desde el borde derecho visual (que es el borde superior físico)
+  	  		% Usamos 'current page.south west' como origen (0,0) para mayor control.
+  	  		% En una hoja Letter (21.59 x 27.94 cm) rotada:
+  	  		\node[rotate=90, anchor=east, font=\normalsize] at ([xshift=20.09cm, yshift=24.94cm]current page.south west) {\thepage};
+  	  		% Explicación de las coordenadas:
+  	  		% x = 21.59cm (ancho) - 1.5cm = 20.09cm
+  	  		% y = 27.94cm (alto) - 3.0cm = 24.94cm
+  	  	\end{tikzpicture}%
+  	\fi
+}
+
+\AtBeginEnvironment{landscape}{%
+  	\clearpage
+  	\global\landscapemodetrue
+  	\let\ps@plain\ps@landscapeplain
+  	\pagestyle{landscapeplain}
+}
+
+\AtEndEnvironment{landscape}{%
+  	\clearpage
+  	\global\landscapemodefalse
+  	\let\ps@plain\original@ps@plain
+  	\pagestyle{plain}
+}
+\makeatother
+
+% ===================================================================
+% 11. LOWERCASE ROMAN PAGE NUMBERS
 % ===================================================================
 \makeatletter
 % Redefine \roman to use lowercase
 \def\@roman#1{\romannumeral #1}
 
 % Patch hyperref bookmarks to use lowercase Roman numerals
-\usepackage{etoolbox}
 \patchcmd{\Hy@writebookmark}{\thepage}{\roman{page}}{}{}
 \makeatother
